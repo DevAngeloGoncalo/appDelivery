@@ -1,11 +1,14 @@
 package br.com.projetoDelivery.Activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -38,5 +41,35 @@ public class EmpresaActivity extends AppCompatActivity {
         inflater.inflate(R.menu.menu_empresa, menu);
 
         return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.id.menuSair : deslogarUsuario(); break;
+            case R.id.menuConfig : abrirConfig(); break;
+            case R.id.menuNovoProduto : abrirNovoProduto(); break;
+
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void deslogarUsuario(){
+        try{
+            autenticacao.signOut();
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    private void abrirConfig(){
+        startActivity(new Intent(EmpresaActivity.this, ConfigEmpresaActivity.class));
+    }
+
+    private void abrirNovoProduto(){
+        startActivity(new Intent(EmpresaActivity.this, NovoProdutoEmpresaActivity.class));
     }
 }
