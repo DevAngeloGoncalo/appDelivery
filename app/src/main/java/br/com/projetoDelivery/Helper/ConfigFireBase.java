@@ -36,11 +36,4 @@ public class ConfigFireBase {
         return referenciaStorage;
     }
 
-    public static String getIdUsuario(){
-
-        FirebaseAuth autenticacao = getFirebaseAutenticacao();
-        return autenticacao.getCurrentUser().getUid();
-
-    }
-
 }

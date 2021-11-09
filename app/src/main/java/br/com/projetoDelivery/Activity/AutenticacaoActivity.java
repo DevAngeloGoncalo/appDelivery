@@ -4,11 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.media.Session2Command;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.Toast;
 
@@ -23,13 +24,15 @@ import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
 
 import br.com.projetoDelivery.Helper.ConfigFireBase;
+import br.com.projetoDelivery.Helper.usuarioFireBase;
 import br.com.projetoDelivery.R;
 
 public class AutenticacaoActivity extends AppCompatActivity {
 
     private Button botaoAcessar;
     private EditText campoEmail, campoSenha;
-    private Switch tipoAcesso;
+    private Switch tipoAcesso, tipoUsuario;
+    private LinearLayout linearTipoUsuario;
 
     private FirebaseAuth autenticacao;
 
@@ -46,6 +49,17 @@ public class AutenticacaoActivity extends AppCompatActivity {
         //autenticacao = ConfigFireBase.getFirebaseAutenticacao();
 
         verificarUsuarioLogado();
+
+        tipoAcesso.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){//empresa
+                    linearTipoUsuario.setVisibility(View.VISIBLE);
+                }else{//usuario
+                    linearTipoUsuario.setVisibility(View.GONE);
+                }
+            }
+        });
 
         botaoAcessar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,7 +105,8 @@ public class AutenticacaoActivity extends AppCompatActivity {
                     Toast.makeText(AutenticacaoActivity.this,
                             "Logado realizado com sucesso!",
                             Toast.LENGTH_SHORT).show();
-                    abrirTelaPrincipal();
+                    String tipoUsuario = task.getResult().getUser().getDisplayName();
+                    abrirTelaPrincipal(tipoUsuario);
                 }else
                 {
                     String erroExcecaoLogin = "";
@@ -135,7 +150,9 @@ public class AutenticacaoActivity extends AppCompatActivity {
                     Toast.makeText(AutenticacaoActivity.this,
                             "Cadastro realizado com sucesso!",
                             Toast.LENGTH_SHORT).show();
-                    abrirTelaPrincipal();
+                    String tipoUsuario = getTipoUsuario();
+                    usuarioFireBase.atualizarTipoUsuario(tipoUsuario);
+                    abrirTelaPrincipal(tipoUsuario);
                 }
                 else
                 {
@@ -163,14 +180,24 @@ public class AutenticacaoActivity extends AppCompatActivity {
 
     }
 
-    private void abrirTelaPrincipal(){
-        startActivity(new Intent(getApplicationContext(), PrincipalActivity.class));
+    private String getTipoUsuario(){
+        return tipoUsuario.isChecked() ? "E" : "U";
+    }
+
+    private void abrirTelaPrincipal(String tipoUsuario){
+
+        if (tipoUsuario.equals("E")){//empresa
+            startActivity(new Intent(getApplicationContext(), EmpresaActivity.class));
+        }else{
+            startActivity(new Intent(getApplicationContext(), PrincipalActivity.class));
+        }
     }
 
     private void verificarUsuarioLogado(){
         FirebaseUser usuarioAtual = autenticacao.getCurrentUser();
         if( usuarioAtual != null ){
-            abrirTelaPrincipal();
+            String tipoUsuario = usuarioAtual.getDisplayName();
+            abrirTelaPrincipal(tipoUsuario);
         }
     }
 
@@ -180,5 +207,7 @@ public class AutenticacaoActivity extends AppCompatActivity {
         botaoAcessar = findViewById(R.id.buttonAcesso);
         tipoAcesso = findViewById(R.id.switchAcesso);
         autenticacao = ConfigFireBase.getFirebaseAutenticacao();
+        tipoUsuario = findViewById(R.id.switchTipoUsuario);
+        linearTipoUsuario = findViewById(R.id.linearTipoUsuario);
     }
 }
