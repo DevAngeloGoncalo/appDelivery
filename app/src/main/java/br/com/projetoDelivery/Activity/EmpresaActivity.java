@@ -28,7 +28,7 @@ public class EmpresaActivity extends AppCompatActivity {
 
         //Configurações Toolbar
         Toolbar toolbar = findViewById(R.id.toolbarPadrao);
-        toolbar.setTitle("Ifood - empresa");
+        toolbar.setTitle("Empresa");
         setSupportActionBar(toolbar);
     }
 
@@ -50,9 +50,7 @@ public class EmpresaActivity extends AppCompatActivity {
             case R.id.menuSair : deslogarUsuario(); break;
             case R.id.menuConfig : abrirConfig(); break;
             case R.id.menuNovoProduto : abrirNovoProduto(); break;
-
         }
-
         return super.onOptionsItemSelected(item);
     }
 
