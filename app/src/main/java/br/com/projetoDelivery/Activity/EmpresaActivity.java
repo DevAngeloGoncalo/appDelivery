@@ -1,9 +1,11 @@
 package br.com.projetoDelivery.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
-import android.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -24,6 +26,17 @@ public class EmpresaActivity extends AppCompatActivity {
         //Configurações Toolbar
         Toolbar toolbar = findViewById(R.id.toolbarPadrao);
         toolbar.setTitle("Ifood - empresa");
-        //setSupportActionBar(toolbar);
+        setSupportActionBar(toolbar);
+    }
+
+
+    //Criar menus na tela
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_empresa, menu);
+
+        return super.onCreateOptionsMenu(menu);
     }
 }
