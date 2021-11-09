@@ -42,7 +42,7 @@ public class AutenticacaoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_autenticacao);
 
         //Esconder tela
-        getSupportActionBar().hide();
+        //getSupportActionBar().hide();
 
         //Instanciar Autenticacao VERIFICAR SE PODE COLOCAR EM INICIALIZACOMPONENTES
         inicializaComponentes();

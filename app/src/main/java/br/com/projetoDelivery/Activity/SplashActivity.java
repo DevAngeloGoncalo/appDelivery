@@ -17,7 +17,7 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         //Esconder tela
-        getSupportActionBar().hide();
+        //getSupportActionBar().hide();
 
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             @Override
