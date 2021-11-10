@@ -103,7 +103,7 @@ public class AutenticacaoActivity extends AppCompatActivity {
                 if (task.isSuccessful())
                 {
                     Toast.makeText(AutenticacaoActivity.this,
-                            "Logado realizado com sucesso!",
+                            "Login realizado com sucesso!",
                             Toast.LENGTH_SHORT).show();
                     String tipoUsuario = task.getResult().getUser().getDisplayName();
                     abrirTelaPrincipal(tipoUsuario);

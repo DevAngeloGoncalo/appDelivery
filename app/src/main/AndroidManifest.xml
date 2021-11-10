@@ -9,10 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.NovoProdutoEmpresaActivity"
-            android:parentActivityName=".Activity.EmpresaActivity"></activity>
-        <activity android:name=".Activity.ConfigEmpresaActivity"
-            android:parentActivityName=".Activity.EmpresaActivity"/>
+        <activity android:name=".Activity.ConfigUsuarioActivity"></activity>
+        <activity
+            android:name=".Activity.NovoProdutoEmpresaActivity"
+            android:parentActivityName=".Activity.EmpresaActivity" />
+        <activity
+            android:name=".Activity.ConfigEmpresaActivity"
+            android:parentActivityName=".Activity.EmpresaActivity" />
         <activity android:name=".Activity.EmpresaActivity" />
         <activity android:name=".Activity.PrincipalActivity" />
         <activity android:name=".Activity.AutenticacaoActivity" />
