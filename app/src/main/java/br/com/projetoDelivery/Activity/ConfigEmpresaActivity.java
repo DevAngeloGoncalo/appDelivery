@@ -140,7 +140,7 @@ public class ConfigEmpresaActivity extends AppCompatActivity {
     }
 
     //public para ser acessado do botao
-    public void validarDadosEmpresa() {
+    public void validarDadosEmpresa(View view) {
         String nome = editEmpresaNome.getText().toString();
         String taxa = editEmpresaEntregaTaxa.getText().toString();
         String categoria = editEmpresaCategoria.getText().toString();
