@@ -28,8 +28,8 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void TelaAutenticacao(){
-        //Intent i = new Intent(SplashActivity.this, AutenticacaoActivity.class);
-        Intent i = new Intent(SplashActivity.this, PrincipalActivity.class);
+        Intent i = new Intent(SplashActivity.this, AutenticacaoActivity.class);
+        //Intent i = new Intent(SplashActivity.this, PrincipalActivity.class);
         startActivity(i);
         finish();
 
