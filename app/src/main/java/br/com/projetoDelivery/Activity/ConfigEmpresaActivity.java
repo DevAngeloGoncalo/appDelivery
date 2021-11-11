@@ -25,6 +25,8 @@ import com.google.firebase.storage.UploadTask;
 
 import java.io.ByteArrayOutputStream;
 
+import br.com.projetoDelivery.Model.Empresa;
+
 import br.com.projetoDelivery.Helper.ConfigFireBase;
 import br.com.projetoDelivery.Helper.UsuarioFireBase;
 import br.com.projetoDelivery.R;
@@ -132,8 +134,44 @@ public class ConfigEmpresaActivity extends AppCompatActivity {
         imagePerfilEmpresa = findViewById(R.id.imagePerfilEmpresa);
     }
 
+    private void exibirMensagem(String texto){
+        Toast.makeText(this, texto, Toast.LENGTH_SHORT)
+                .show();
+    }
+
     //public para ser acessado do botao
-    public void validarDadosEmpresa(){
+    public void validarDadosEmpresa() {
+        String nome = editEmpresaNome.getText().toString();
+        String taxa = editEmpresaEntregaTaxa.getText().toString();
+        String categoria = editEmpresaCategoria.getText().toString();
+        String tempo = editEmpresaEntregaTempo.getText().toString();
+
+        if (!nome.isEmpty()) {
+            if (!taxa.isEmpty()) {
+                if (!categoria.isEmpty()) {
+                    if (!tempo.isEmpty()) {
+
+                        Empresa empresa = new Empresa();
+                        empresa.setIdUsuario(idUsuarioLogado);
+                        empresa.setNome(nome);
+                        empresa.setPrecoEntrega( Double.parseDouble(taxa));
+                        empresa.setCategoria(categoria);
+                        empresa.setTempo(tempo);
+                        empresa.setUrlImagem(urlImagemEscolhida);
+                        empresa.salvar(id);
+                        finish();
+                    }else{
+                        exibirMensagem("Digite um tempo de entrega");
+                    }
+                }else{
+                    exibirMensagem("Digite uma categoria");
+                }
+            }else{
+                exibirMensagem("Digite uma taxa de entrega");
+            }
+        }else{
+            exibirMensagem("Digite um nome para a empresa");
+        }
 
     }
 }
