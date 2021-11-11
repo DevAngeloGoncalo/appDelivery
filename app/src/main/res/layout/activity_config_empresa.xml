@@ -12,10 +12,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <ImageView
-        android:id="@+id/imageView3"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imagePerfilEmpresa"
         android:layout_width="match_parent"
         android:layout_height="120dp"
-        app:srcCompat="@drawable/perfil" />
-
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/perfil" />
+    
 </LinearLayout>
