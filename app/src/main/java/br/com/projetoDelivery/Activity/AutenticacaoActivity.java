@@ -24,7 +24,7 @@ import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
 
 import br.com.projetoDelivery.Helper.ConfigFireBase;
-import br.com.projetoDelivery.Helper.usuarioFireBase;
+import br.com.projetoDelivery.Helper.UsuarioFireBase;
 import br.com.projetoDelivery.R;
 
 public class AutenticacaoActivity extends AppCompatActivity {
@@ -151,7 +151,7 @@ public class AutenticacaoActivity extends AppCompatActivity {
                             "Cadastro realizado com sucesso!",
                             Toast.LENGTH_SHORT).show();
                     String tipoUsuario = getTipoUsuario();
-                    usuarioFireBase.atualizarTipoUsuario(tipoUsuario);
+                    UsuarioFireBase.atualizarTipoUsuario(tipoUsuario);
                     abrirTelaPrincipal(tipoUsuario);
                 }
                 else
