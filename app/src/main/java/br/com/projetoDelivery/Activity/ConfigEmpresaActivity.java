@@ -59,7 +59,7 @@ public class ConfigEmpresaActivity extends AppCompatActivity {
 
                 switch (requestCode){
                     case SELECIONAR_GALERIA:
-                        Uri localImagem = data.getData(); break;
+                        Uri localImagem = data.getData();
                         imagem = MediaStore.Images.Media.getBitmap(getContentResolver(),localImagem); break;
                 }
 
