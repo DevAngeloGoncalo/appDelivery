@@ -158,7 +158,7 @@ public class ConfigEmpresaActivity extends AppCompatActivity {
                         empresa.setCategoria(categoria);
                         empresa.setTempo(tempo);
                         empresa.setUrlImagem(urlImagemEscolhida);
-                        empresa.salvar(id);
+                        empresa.salvar();
                         finish();
                     }else{
                         exibirMensagem("Digite um tempo de entrega");
