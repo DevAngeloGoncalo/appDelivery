@@ -16,8 +16,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
@@ -33,7 +35,9 @@ public class ConfigEmpresaActivity extends AppCompatActivity {
 
     //Firebase
     private StorageReference storageReference;
+
     private String idUsuarioLogado;
+    private String urlImagemEscolhida = "";
 
     private EditText editEmpresaNome, editEmpresaCategoria, editEmpresaEntregaTempo, editEmpresaEntregaTaxa;
     private ImageView imagePerfilEmpresa;
@@ -86,7 +90,7 @@ public class ConfigEmpresaActivity extends AppCompatActivity {
                     imagem.compress(Bitmap.CompressFormat.JPEG, 70, baos);
                     byte[] dadosImg = baos.toByteArray();
 
-                    StorageReference imagemRef = storageReference.child("imagens").child("empresas").child(idUsuarioLogado + "jpeg");
+                    final StorageReference imagemRef = storageReference.child("imagens").child("empresas").child(idUsuarioLogado + "jpeg");
 
                     //Upload
                     UploadTask uploadTask= imagemRef.putBytes(dadosImg);
@@ -98,7 +102,16 @@ public class ConfigEmpresaActivity extends AppCompatActivity {
                     }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            
+                            //urlImagemEscolhida  = taskSnapshot.getStorage().getDownloadUrl().toString();
+
+                            imagemRef.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Uri> task) {
+                                    Uri url = task.getResult();
+                                }
+                            });
+
+                            Toast.makeText(ConfigEmpresaActivity.this, "SUCESSO AO FAZER UPLOAD DA IMAGEM",Toast.LENGTH_SHORT).show();
                         }
                     });
 
@@ -117,5 +130,10 @@ public class ConfigEmpresaActivity extends AppCompatActivity {
         editEmpresaNome = findViewById(R.id.editEmpresaNome);
         editEmpresaCategoria = findViewById(R.id.editEmpresaCategoria);
         imagePerfilEmpresa = findViewById(R.id.imagePerfilEmpresa);
+    }
+
+    //public para ser acessado do botao
+    public void validarDadosEmpresa(){
+
     }
 }
