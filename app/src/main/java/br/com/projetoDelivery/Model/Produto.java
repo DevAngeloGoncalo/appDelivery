@@ -9,6 +9,15 @@ public class Produto {
     private String nome;
     private String descricao;
     private Double preco;
+    private String urlImagem;
+
+    public String getUrlImagem() {
+        return urlImagem;
+    }
+
+    public void setUrlImagem(String urlImagem) {
+        this.urlImagem = urlImagem;
+    }
 
     public Produto() {
     }
