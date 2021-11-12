@@ -104,7 +104,7 @@ public class ConfigEmpresaActivity extends AppCompatActivity {
                     }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            //urlImagemEscolhida  = taskSnapshot.getStorage().getDownloadUrl().toString();
+                            urlImagemEscolhida  = taskSnapshot.getStorage().getDownloadUrl().toString();
 
                             imagemRef.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
                                 @Override
