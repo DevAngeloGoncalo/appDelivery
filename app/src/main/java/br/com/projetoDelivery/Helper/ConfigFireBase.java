@@ -12,18 +12,10 @@ public class ConfigFireBase {
     private static FirebaseAuth referenciaAutenticacao;
     private static StorageReference referenciaStorage;
 
-    private static FirebaseDatabase db;
-
-
     //Retorna a referencia do database
     public static DatabaseReference getFirebase(){
         if( referenciaFirebase == null ){
-
-            db = FirebaseDatabase.getInstance();
-            referenciaFirebase = db.getReference("Empresa");
-            referenciaFirebase.child("pato");
-//            referenciaFirebase = FirebaseDatabase.getInstance().getReference();
-//            referenciaFirebase.setValue("25");
+            referenciaFirebase = FirebaseDatabase.getInstance().getReference();
         }
         return referenciaFirebase;
     }
