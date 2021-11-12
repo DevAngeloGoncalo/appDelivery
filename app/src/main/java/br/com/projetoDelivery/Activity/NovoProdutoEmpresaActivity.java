@@ -15,18 +15,21 @@ import com.squareup.picasso.Picasso;
 import br.com.projetoDelivery.Helper.ConfigFireBase;
 import br.com.projetoDelivery.Helper.UsuarioFireBase;
 import br.com.projetoDelivery.Model.Empresa;
+import br.com.projetoDelivery.Model.Produto;
 import br.com.projetoDelivery.R;
 
 public class NovoProdutoEmpresaActivity extends AppCompatActivity {
 
     private EditText editProdutoNome, editProdutoDescricao, editProdutoPreco;
     private ImageView imageProduto;
-    private FirebaseAuth autenticacao;
+    private String idUsuarioLogado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_novo_produto_empresa);
+
+        inicializarComponentes();
 
         //Configurações Toolbar
         Toolbar toolbar = findViewById(R.id.toolbarPadrao);
@@ -44,7 +47,16 @@ public class NovoProdutoEmpresaActivity extends AppCompatActivity {
         if (!nome.isEmpty()) {
             if (!descricao.isEmpty()) {
                 if (!preco.isEmpty()) {
+                    Produto produto = new Produto();
+                    produto.setIdUsuario(idUsuarioLogado);
+                    produto.setNome(nome);
+                    produto.setDescricao(descricao);
+                    produto.setPreco(Double.parseDouble(preco));
 
+                    //produto.setUrlImagem(urlImagemEscolhida);
+                    produto.salvar();
+                    finish();
+                    exibirMensagem("Produto salvo com sucesso!");
                 }else{
                     exibirMensagem("Digite o preço do produto");
                 }
@@ -69,6 +81,8 @@ public class NovoProdutoEmpresaActivity extends AppCompatActivity {
         editProdutoPreco = findViewById(R.id.editProdutoPreco);
 
         imageProduto = findViewById(R.id.imageProduto);
+
+        idUsuarioLogado = UsuarioFireBase.getIdUsuario();
 
     }
 }

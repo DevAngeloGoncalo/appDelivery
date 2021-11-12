@@ -69,7 +69,7 @@
             android:background="@drawable/bg_edit_text"
             android:ems="10"
             android:hint="Taxa Entrega"
-            android:inputType="text"
+            android:inputType="numberDecimal"
             android:padding="16dp" />
 
         <Button
