@@ -101,14 +101,6 @@ public class EmpresaActivity extends AppCompatActivity {
 
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                     produtos.add(dataSnapshot.getValue(Produto.class));
-
-                    Produto produto = snapshot.getValue(Produto.class);
-                    urlImagemEscolhida = produto.getUrlImagem();
-
-                    if (urlImagemEscolhida != "" && urlImagemEscolhida != null){
-                        //Glide.with(getApplication()).load(urlImagemEscolhida).into(imagePerfilEmpresa);
-                        Picasso.get().load(urlImagemEscolhida).into(imageProduto);
-                    }
                 }
 
                 adapterProduto.notifyDataSetChanged();
