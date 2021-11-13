@@ -21,12 +21,14 @@ public class Produto {
 
     public void salvar(){
         DatabaseReference firebaseRef = ConfigFireBase.getFirebase();
-        DatabaseReference produtoRef = firebaseRef.child("produtos").child(getIdUsuario()).push();
+        DatabaseReference produtoRef = firebaseRef.child("produtos").child(getIdUsuario()).child(getIdProduto());
         produtoRef.setValue(this);
     }
 
     public void excluir(){
-
+        DatabaseReference firebaseRef = ConfigFireBase.getFirebase();
+        DatabaseReference produtoRef = firebaseRef.child("produtos").child(getIdUsuario()).child(getIdProduto());
+        produtoRef.removeValue();
     }
 
     public String getIdProduto() {
