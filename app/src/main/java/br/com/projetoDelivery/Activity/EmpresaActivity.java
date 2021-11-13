@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -24,6 +26,7 @@ import java.util.List;
 import br.com.projetoDelivery.Adapter.AdapterProduto;
 import br.com.projetoDelivery.Helper.ConfigFireBase;
 import br.com.projetoDelivery.Helper.UsuarioFireBase;
+import br.com.projetoDelivery.Listener.RecyclerItemClickListener;
 import br.com.projetoDelivery.Model.Produto;
 import br.com.projetoDelivery.R;
 
@@ -58,6 +61,26 @@ public class EmpresaActivity extends AppCompatActivity {
 
         //Materializar
         materializarProdutos();
+
+        //eventos de toque
+        recyclerProdutos.addOnItemTouchListener(new RecyclerItemClickListener(
+                this, recyclerProdutos, new RecyclerItemClickListener.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+
+
+            }
+
+            @Override
+            public void onLongItemClick(View view, int position) {
+
+            }
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+        }));
 
     }
 
