@@ -3,6 +3,8 @@ package br.com.projetoDelivery.Activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,18 +13,35 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import br.com.projetoDelivery.Adapter.AdapterProduto;
 import br.com.projetoDelivery.Helper.ConfigFireBase;
+import br.com.projetoDelivery.Helper.UsuarioFireBase;
+import br.com.projetoDelivery.Model.Produto;
 import br.com.projetoDelivery.R;
 
 public class EmpresaActivity extends AppCompatActivity {
 
+    private DatabaseReference firebaseRef;
     private FirebaseAuth autenticacao;
+    private RecyclerView recyclerProdutos;
+    private AdapterProduto adapterProduto;
+    private List<Produto> produtos = new ArrayList<>();
+    private String idUsuarioLogado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_empresa);
+
+        inicializarComponentes();
 
         autenticacao = ConfigFireBase.getFirebaseAutenticacao();
 
@@ -30,6 +49,37 @@ public class EmpresaActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbarPadrao);
         toolbar.setTitle("Empresa");
         setSupportActionBar(toolbar);
+
+        //Configuração RecyclerView
+        recyclerProdutos.setLayoutManager(new LinearLayoutManager(this));
+        recyclerProdutos.setHasFixedSize(true);
+        adapterProduto = new AdapterProduto(produtos, this);
+        recyclerProdutos.setAdapter(adapterProduto);
+
+        //Materializar
+        materializarProdutos();
+
+    }
+
+    private void materializarProdutos(){
+        DatabaseReference produtosRef = firebaseRef.child("produtos").child(idUsuarioLogado);
+        produtosRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                produtos.clear();
+
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    produtos.add(dataSnapshot.getValue(Produto.class));
+                }
+
+                adapterProduto.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
 
@@ -70,5 +120,11 @@ public class EmpresaActivity extends AppCompatActivity {
 
     private void abrirNovoProduto(){
         startActivity(new Intent(EmpresaActivity.this, NovoProdutoEmpresaActivity.class));
+    }
+
+    private void inicializarComponentes(){
+        recyclerProdutos = findViewById(R.id.recyclerProdutos);
+        firebaseRef = ConfigFireBase.getFirebase();
+        idUsuarioLogado = UsuarioFireBase.getIdUsuario();
     }
 }
