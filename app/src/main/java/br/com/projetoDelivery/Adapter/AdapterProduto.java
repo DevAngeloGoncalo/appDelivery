@@ -9,10 +9,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import br.com.projetoDelivery.Model.Empresa;
 import br.com.projetoDelivery.R;
 import br.com.projetoDelivery.Model.Produto;
 
@@ -43,9 +45,10 @@ public class AdapterProduto extends RecyclerView.Adapter<AdapterProduto.MyViewHo
 
         String url = produto.getUrlImagem();
 
-        //Imagem cadastrada
-        //List<String>
+
+
         Picasso.get().load(url).into(holder.foto);
+        //Glide.with(context).load(url).into(holder.foto);
     }
 
     @Override
@@ -66,7 +69,7 @@ public class AdapterProduto extends RecyclerView.Adapter<AdapterProduto.MyViewHo
             nome = itemView.findViewById(R.id.textNomeRefeicao);
             descricao = itemView.findViewById(R.id.textDescricaoRefeicao);
             valor = itemView.findViewById(R.id.textPreco);
-            foto = itemView.findViewById(R.id.imageProduto);
+            foto = itemView.findViewById(R.id.imageProdutoCatalogo);
         }
     }
 }

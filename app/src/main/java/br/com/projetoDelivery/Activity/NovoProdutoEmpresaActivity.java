@@ -34,7 +34,7 @@ import br.com.projetoDelivery.R;
 public class NovoProdutoEmpresaActivity extends AppCompatActivity {
 
     private EditText editProdutoNome, editProdutoDescricao, editProdutoPreco;
-    private ImageView imageProduto;
+    private ImageView imageProdutoCatalogo;
     private String idUsuarioLogado;
     //COLOCAR OPÇÃO DE TIRAR FOTO
     private static final int SELECIONAR_GALERIA = 200;
@@ -57,7 +57,7 @@ public class NovoProdutoEmpresaActivity extends AppCompatActivity {
 
 
         //Para acessar uma imagem
-        imageProduto.setOnClickListener(new View.OnClickListener() {
+        imageProdutoCatalogo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
@@ -83,7 +83,7 @@ public class NovoProdutoEmpresaActivity extends AppCompatActivity {
 
                 if (imagem != null){
 
-                    imageProduto.setImageBitmap(imagem);
+                    imageProdutoCatalogo.setImageBitmap(imagem);
 
                     //Salvamento, considerar colocar no botao salvar AG20211111
                     ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -166,7 +166,7 @@ public class NovoProdutoEmpresaActivity extends AppCompatActivity {
         editProdutoNome = findViewById(R.id.editProdutoNome);
         editProdutoPreco = findViewById(R.id.editProdutoPreco);
 
-        imageProduto = findViewById(R.id.imageProduto);
+        imageProdutoCatalogo = findViewById(R.id.imageProduto);
 
         storageReference = ConfigFireBase.getFirebaseStorage();
         idUsuarioLogado = UsuarioFireBase.getIdUsuario();
