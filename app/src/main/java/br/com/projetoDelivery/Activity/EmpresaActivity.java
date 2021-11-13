@@ -13,6 +13,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -20,6 +21,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +30,7 @@ import br.com.projetoDelivery.Adapter.AdapterProduto;
 import br.com.projetoDelivery.Helper.ConfigFireBase;
 import br.com.projetoDelivery.Helper.UsuarioFireBase;
 import br.com.projetoDelivery.Listener.RecyclerItemClickListener;
+import br.com.projetoDelivery.Model.Empresa;
 import br.com.projetoDelivery.Model.Produto;
 import br.com.projetoDelivery.R;
 
@@ -39,6 +42,8 @@ public class EmpresaActivity extends AppCompatActivity {
     private AdapterProduto adapterProduto;
     private List<Produto> produtos = new ArrayList<>();
     private String idUsuarioLogado;
+    private String urlImagemEscolhida = "";
+    private ImageView imageProduto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,6 +101,14 @@ public class EmpresaActivity extends AppCompatActivity {
 
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                     produtos.add(dataSnapshot.getValue(Produto.class));
+
+                    Produto produto = snapshot.getValue(Produto.class);
+                    urlImagemEscolhida = produto.getUrlImagem();
+
+                    if (urlImagemEscolhida != "" && urlImagemEscolhida != null){
+                        //Glide.with(getApplication()).load(urlImagemEscolhida).into(imagePerfilEmpresa);
+                        Picasso.get().load(urlImagemEscolhida).into(imageProduto);
+                    }
                 }
 
                 adapterProduto.notifyDataSetChanged();
