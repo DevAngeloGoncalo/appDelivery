@@ -10,9 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ef91513-132f-434a-b3d8-7b8cca0e7bf3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Listener/RecyclerItemClickListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/adapter_produto.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/divisor.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +93,7 @@
       <recent name="br.com.projetoDelivery.Activity" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\angel\Documents\Android Studio\projetoDelivery\app\src\main\res\layout" />
       <recent name="C:\Users\angel\Documents\Android Studio\projetoDelivery\app\src\main\java\br\com\projetoDelivery\Listener" />
       <recent name="C:\Users\angel\AndroidStudioProjects\projetoDelivery\app" />
       <recent name="C:\Users\angel\AndroidStudioProjects\projetoDelivery\app\src\main\res\drawable-v24" />
