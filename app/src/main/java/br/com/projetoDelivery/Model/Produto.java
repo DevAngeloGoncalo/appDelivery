@@ -6,26 +6,35 @@ import br.com.projetoDelivery.Helper.ConfigFireBase;
 
 public class Produto {
     private String idUsuario;
+    private String idProduto;
     private String nome;
     private String descricao;
     private Double preco;
     private String urlImagem;
 
-    public String getUrlImagem() {
-        return urlImagem;
-    }
-
-    public void setUrlImagem(String urlImagem) {
-        this.urlImagem = urlImagem;
-    }
-
     public Produto() {
+        //Configura o ID do porduto sempre que produto por intanciado
+        DatabaseReference firebaseRef = ConfigFireBase.getFirebase();
+        DatabaseReference produtoRef = firebaseRef.child("produtos");
+        setIdProduto(produtoRef.push().getKey());
     }
 
     public void salvar(){
         DatabaseReference firebaseRef = ConfigFireBase.getFirebase();
         DatabaseReference produtoRef = firebaseRef.child("produtos").child(getIdUsuario()).push();
         produtoRef.setValue(this);
+    }
+
+    public void excluir(){
+
+    }
+
+    public String getIdProduto() {
+        return idProduto;
+    }
+
+    public void setIdProduto(String idProduto) {
+        this.idProduto = idProduto;
     }
 
     public String getIdUsuario() {
@@ -58,5 +67,13 @@ public class Produto {
 
     public void setPreco(Double preco) {
         this.preco = preco;
+    }
+
+    public String getUrlImagem() {
+        return urlImagem;
+    }
+
+    public void setUrlImagem(String urlImagem) {
+        this.urlImagem = urlImagem;
     }
 }

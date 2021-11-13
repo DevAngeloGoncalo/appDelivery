@@ -73,7 +73,8 @@ public class EmpresaActivity extends AppCompatActivity {
 
             @Override
             public void onLongItemClick(View view, int position) {
-
+                Produto prdutoEscolhido = produtos.get(position);
+                prdutoEscolhido.excluir();
             }
 
             @Override
