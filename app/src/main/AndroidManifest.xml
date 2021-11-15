@@ -2,29 +2,30 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.projetoDelivery">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name="br.com.projetoDelivery.Activity.ConfigUsuarioActivity"
-            android:parentActivityName="br.com.projetoDelivery.Activity.PrincipalActivity"></activity>
-
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".Activity.CatalogoActivity"></activity>
         <activity
-            android:name="br.com.projetoDelivery.Activity.NovoProdutoEmpresaActivity"
-            android:parentActivityName="br.com.projetoDelivery.Activity.EmpresaActivity" />
+            android:name=".Activity.ConfigUsuarioActivity"
+            android:parentActivityName=".Activity.PrincipalActivity" />
         <activity
-            android:name="br.com.projetoDelivery.Activity.ConfigEmpresaActivity"
-            android:parentActivityName="br.com.projetoDelivery.Activity.EmpresaActivity" />
-        <activity android:name="br.com.projetoDelivery.Activity.EmpresaActivity" />
-        <activity android:name="br.com.projetoDelivery.Activity.PrincipalActivity" />
-        <activity android:name="br.com.projetoDelivery.Activity.AutenticacaoActivity" />
-        <activity android:name="br.com.projetoDelivery.Activity.SplashActivity">
+            android:name=".Activity.NovoProdutoEmpresaActivity"
+            android:parentActivityName=".Activity.EmpresaActivity" />
+        <activity
+            android:name=".Activity.ConfigEmpresaActivity"
+            android:parentActivityName=".Activity.EmpresaActivity" />
+        <activity android:name=".Activity.EmpresaActivity" />
+        <activity android:name=".Activity.PrincipalActivity" />
+        <activity android:name=".Activity.AutenticacaoActivity" />
+        <activity android:name=".Activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
