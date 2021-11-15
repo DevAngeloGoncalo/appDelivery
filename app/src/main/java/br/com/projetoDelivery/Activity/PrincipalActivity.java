@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,9 +14,19 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import br.com.projetoDelivery.Adapter.AdapterEmpresa;
+import br.com.projetoDelivery.Adapter.AdapterProduto;
 import br.com.projetoDelivery.Helper.ConfigFireBase;
+import br.com.projetoDelivery.Model.Empresa;
 import br.com.projetoDelivery.R;
 
 public class PrincipalActivity extends AppCompatActivity {
@@ -22,6 +34,11 @@ public class PrincipalActivity extends AppCompatActivity {
     private FirebaseAuth autenticacao;
     private MaterialSearchView searchView;
     private Toolbar toolbar;
+    private RecyclerView recyclerEmpresas;
+    private List<Empresa> empresas = new ArrayList<>();
+
+    private DatabaseReference fireBaseRef;
+    private AdapterEmpresa adapterEmpresa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +46,29 @@ public class PrincipalActivity extends AppCompatActivity {
         setContentView(R.layout.activity_principal);
 
         inicializarComponentes();
+
+        materializarEmpresas();
+    }
+
+    private void materializarEmpresas(){
+        DatabaseReference empresaRef = fireBaseRef.child("empresas");
+        empresaRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                empresas.clear();
+
+                for(DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    empresas.add(dataSnapshot.getValue(Empresa.class));
+                }
+                adapterEmpresa.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
     }
 
     //Criar menus na tela
@@ -72,13 +112,21 @@ public class PrincipalActivity extends AppCompatActivity {
     }
     private void inicializarComponentes(){
         searchView = findViewById(R.id.materialSearchView);
+        recyclerEmpresas = findViewById(R.id.recyclerEmpresas);
         toolbar = findViewById(R.id.toolbar);
 
         autenticacao = ConfigFireBase.getFirebaseAutenticacao();
+        fireBaseRef = ConfigFireBase.getFirebase();
 
         //Configurações Toolbar
         toolbar.setTitle("projetoDelivery");
         setSupportActionBar(toolbar);
+
+        //Configura RecyclerView
+        recyclerEmpresas.setLayoutManager(new LinearLayoutManager(this));
+        recyclerEmpresas.setHasFixedSize(true);
+        adapterEmpresa = new AdapterEmpresa(empresas);
+        recyclerEmpresas.setAdapter(adapterEmpresa);
 
     }
 
