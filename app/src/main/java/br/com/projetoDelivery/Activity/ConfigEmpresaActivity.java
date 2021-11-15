@@ -104,6 +104,22 @@ public class ConfigEmpresaActivity extends AppCompatActivity {
 
                     //Upload
                     UploadTask uploadTask= imagemRef.putBytes(dadosImg);
+
+                    uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+                        @Override
+                        public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                            if (!task.isSuccessful()){
+                                throw task.getException();
+                            }
+                            return imagemRef.getDownloadUrl();
+                        }
+                    }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Uri> task) {
+
+                        }
+                    });
+
                     uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
                         @Override
                         public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
@@ -172,8 +188,7 @@ public class ConfigEmpresaActivity extends AppCompatActivity {
     }
 
     private void exibirMensagem(String texto){
-        Toast.makeText(this, texto, Toast.LENGTH_SHORT)
-                .show();
+        Toast.makeText(this, texto, Toast.LENGTH_SHORT).show();
     }
 
     //public para ser acessado do botao

@@ -79,9 +79,9 @@ public class EmpresaActivity extends AppCompatActivity {
 
             @Override
             public void onLongItemClick(View view, int position) {
-                Produto prdutoEscolhido = produtos.get(position);
-                prdutoEscolhido.excluir();
-                Toast.makeText(EmpresaActivity.this, "Produto Removido com sucesso", Toast.LENGTH_LONG);
+                Produto produtoSelecionado = produtos.get(position);
+                produtoSelecionado.excluir();
+                Toast.makeText(EmpresaActivity.this, "Produto excluído com sucesso!", Toast.LENGTH_SHORT).show();
             }
 
             @Override

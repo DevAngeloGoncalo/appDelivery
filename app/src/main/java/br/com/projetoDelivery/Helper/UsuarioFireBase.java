@@ -6,7 +6,6 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 
 public class UsuarioFireBase {
     public static String getIdUsuario(){
-
         FirebaseAuth autenticacao = ConfigFireBase.getFirebaseAutenticacao();
         return autenticacao.getCurrentUser().getUid();
 

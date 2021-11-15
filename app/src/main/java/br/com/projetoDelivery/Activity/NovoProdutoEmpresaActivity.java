@@ -157,8 +157,7 @@ public class NovoProdutoEmpresaActivity extends AppCompatActivity {
     }
 
     private void exibirMensagem(String texto){
-        Toast.makeText(this, texto, Toast.LENGTH_SHORT)
-                .show();
+        Toast.makeText(this, texto, Toast.LENGTH_SHORT).show();
     }
 
     private void inicializarComponentes(){
