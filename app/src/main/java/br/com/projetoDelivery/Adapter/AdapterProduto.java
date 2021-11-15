@@ -1,22 +1,19 @@
 package br.com.projetoDelivery.Adapter;
 
 import android.content.Context;
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.bumptech.glide.Glide;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+import br.com.projetoDelivery.R;
+import br.com.projetoDelivery.Model.Produto;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-import br.com.projetoDelivery.Model.Empresa;
-import br.com.projetoDelivery.R;
-import br.com.projetoDelivery.Model.Produto;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 
 public class AdapterProduto extends RecyclerView.Adapter<AdapterProduto.MyViewHolder>{
@@ -42,13 +39,10 @@ public class AdapterProduto extends RecyclerView.Adapter<AdapterProduto.MyViewHo
         holder.nome.setText(produto.getNome());
         holder.descricao.setText(produto.getDescricao());
         holder.valor.setText("R$ " + produto.getPreco());
-
-        String url = produto.getUrlImagem();
-
-
-
-        Picasso.get().load(url).into(holder.foto);
-        //Glide.with(context).load(url).into(holder.foto);
+        String urlImagem = produto.getUrlImagem();
+        if(!urlImagem.equals("") || !(urlImagem == null)){
+            Picasso.get().load(urlImagem).into(holder.imagem);
+        }
     }
 
     @Override
@@ -61,7 +55,7 @@ public class AdapterProduto extends RecyclerView.Adapter<AdapterProduto.MyViewHo
         TextView nome;
         TextView descricao;
         TextView valor;
-        ImageView foto;
+        CircleImageView imagem;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -69,7 +63,7 @@ public class AdapterProduto extends RecyclerView.Adapter<AdapterProduto.MyViewHo
             nome = itemView.findViewById(R.id.textNomeRefeicao);
             descricao = itemView.findViewById(R.id.textDescricaoRefeicao);
             valor = itemView.findViewById(R.id.textPreco);
-            foto = itemView.findViewById(R.id.imageProdutoCatalogo);
+            imagem = itemView.findViewById(R.id.imageProdutoCatalogo);
         }
     }
 }

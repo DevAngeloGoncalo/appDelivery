@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 
-import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -30,12 +29,6 @@ public class PrincipalActivity extends AppCompatActivity {
         setContentView(R.layout.activity_principal);
 
         inicializarComponentes();
-        autenticacao = ConfigFireBase.getFirebaseAutenticacao();
-
-        //Configurações Toolbar
-        toolbar.setTitle("projetoDelivery");
-        setSupportActionBar(toolbar);
-
     }
 
     //Criar menus na tela
@@ -66,6 +59,7 @@ public class PrincipalActivity extends AppCompatActivity {
 
     private void deslogarUsuario(){
         try{
+            //Pedir Confirmacao AG20211115
             autenticacao.signOut();
             finish();
         }catch (Exception e){
@@ -79,6 +73,12 @@ public class PrincipalActivity extends AppCompatActivity {
     private void inicializarComponentes(){
         searchView = findViewById(R.id.materialSearchView);
         toolbar = findViewById(R.id.toolbarPadrao);
+
+        autenticacao = ConfigFireBase.getFirebaseAutenticacao();
+
+        //Configurações Toolbar
+        toolbar.setTitle("projetoDelivery");
+        setSupportActionBar(toolbar);
 
     }
 

@@ -1,27 +1,36 @@
 package br.com.projetoDelivery.Model;
 
-import com.google.firebase.database.DatabaseReference;
-
 import br.com.projetoDelivery.Helper.ConfigFireBase;
+import com.google.firebase.database.DatabaseReference;
 
 public class Produto {
     private String idUsuario;
-    private String idProduto;
     private String nome;
     private String descricao;
-    private Double preco;
+    private Double Preco;
     private String urlImagem;
+    private String idProduto;
 
-    public Produto() {
-        //Configura o ID do porduto sempre que produto por intanciado
+    public Produto(){
+
+    }
+
+    public Produto(String id){
         DatabaseReference firebaseRef = ConfigFireBase.getFirebase();
-        DatabaseReference produtoRef = firebaseRef.child("produtos");
-        setIdProduto(produtoRef.push().getKey());
+        DatabaseReference produtoRef = firebaseRef.child("produtos")
+                .child(id);
+        //Setando o id  do produto
+        String idProdutoFirebase = produtoRef.push().getKey();
+        setIdProduto(idProdutoFirebase);
+
+        //Setando o id do usuário recebido
+        setIdUsuario(id);
     }
 
     public void salvar(){
         DatabaseReference firebaseRef = ConfigFireBase.getFirebase();
         DatabaseReference produtoRef = firebaseRef.child("produtos").child(getIdUsuario()).child(getIdProduto());
+
         produtoRef.setValue(this);
     }
 
@@ -64,11 +73,11 @@ public class Produto {
     }
 
     public Double getPreco() {
-        return preco;
+        return Preco;
     }
 
     public void setPreco(Double preco) {
-        this.preco = preco;
+        Preco = preco;
     }
 
     public String getUrlImagem() {

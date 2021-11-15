@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:221231833713:android:8d79ce6346d7111df9f1d0",
         "android_client_info": {
-          "package_name": "com.projetoDelivery"
+          "package_name": "br.com.projetoDelivery"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "221231833713-c5bbb1hg468t8a39hfstjrekusitt4f7.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.projetoDelivery",
+            "package_name": "br.com.projetoDelivery",
             "certificate_hash": "088357cfc4f404e58e9569499e08b650f13e86a8"
           }
         },
