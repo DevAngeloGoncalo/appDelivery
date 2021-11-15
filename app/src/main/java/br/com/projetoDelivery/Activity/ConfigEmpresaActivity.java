@@ -225,7 +225,7 @@ public class ConfigEmpresaActivity extends AppCompatActivity {
         idUsuarioLogado = UsuarioFireBase.getIdUsuario();
 
         //Configurações Toolbar
-        Toolbar toolbar = findViewById(R.id.toolbarPadrao);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("Configurações");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

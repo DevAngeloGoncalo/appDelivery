@@ -41,7 +41,7 @@ public class PrincipalActivity extends AppCompatActivity {
 
         MenuItem item =  menu.findItem(R.id.menuPesquisa);
         searchView.setMenuItem(item);
-        SearchView searchView1 = (SearchView) item.getActionView();
+        //SearchView searchView1 = (SearchView) item.getActionView();
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -72,7 +72,7 @@ public class PrincipalActivity extends AppCompatActivity {
     }
     private void inicializarComponentes(){
         searchView = findViewById(R.id.materialSearchView);
-        toolbar = findViewById(R.id.toolbarPadrao);
+        toolbar = findViewById(R.id.toolbar);
 
         autenticacao = ConfigFireBase.getFirebaseAutenticacao();
 

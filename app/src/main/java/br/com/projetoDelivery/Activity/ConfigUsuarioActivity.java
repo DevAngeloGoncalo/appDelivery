@@ -15,7 +15,7 @@ public class ConfigUsuarioActivity extends AppCompatActivity {
         setContentView(R.layout.activity_config_usuario);
 
         //Configurações Toolbar
-        Toolbar toolbar = findViewById(R.id.toolbarPadrao);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("Configurações");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

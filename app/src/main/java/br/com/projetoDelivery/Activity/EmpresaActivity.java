@@ -132,7 +132,7 @@ public class EmpresaActivity extends AppCompatActivity {
 
     private void inicializarComponentes(){
         //Configurações Toolbar
-        Toolbar toolbar = findViewById(R.id.toolbarPadrao);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("Empresa");
         setSupportActionBar(toolbar);
         autenticacao = ConfigFireBase.getFirebaseAutenticacao();
