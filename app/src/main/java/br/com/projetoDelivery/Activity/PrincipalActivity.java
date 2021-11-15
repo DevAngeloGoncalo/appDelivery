@@ -17,6 +17,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 
@@ -48,6 +49,49 @@ public class PrincipalActivity extends AppCompatActivity {
         inicializarComponentes();
 
         materializarEmpresas();
+
+        configurarSearchView();
+    }
+
+    private void configurarSearchView(){
+        //Configurar SearchView
+        searchView.setHint("Pesquisar Estabelecimentos");
+        searchView.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                pesquisarEmpresas(newText);
+                return true;
+            }
+        });
+    }
+
+    private void pesquisarEmpresas(String pesquisa){
+        DatabaseReference empresasRef = fireBaseRef.child("empresas");
+
+        //estudar colocar um nome_filtro com tolower para pesquisar
+        Query query = empresasRef.orderByChild("nome").startAt(pesquisa).endAt(pesquisa + "\uf8ff");
+
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                empresas.clear();
+
+                for(DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    empresas.add(dataSnapshot.getValue(Empresa.class));
+                }
+                adapterEmpresa.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     private void materializarEmpresas(){
