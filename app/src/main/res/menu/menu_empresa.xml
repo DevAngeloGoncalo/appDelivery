@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/menuNovoProduto"
-        android:icon="@drawable/ic_adcionar_24"
+        android:icon="@drawable/ic_adicionar_24"
         android:title="Novo Produto"
         app:showAsAction="always" />
 
