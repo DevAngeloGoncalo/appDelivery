@@ -81,6 +81,7 @@ public class PrincipalActivity extends AppCompatActivity {
                 Empresa empresaEscolhida = empresas.get(position);
                 Intent i = new Intent(PrincipalActivity.this, CatalogoActivity.class);
                 //Envia o objeto selecionado
+                //Colocar if para caso o usuario nao tenha se cadastrado AG20211115
                 i.putExtra("empresa", empresaEscolhida);
                 startActivity(i);
             }
