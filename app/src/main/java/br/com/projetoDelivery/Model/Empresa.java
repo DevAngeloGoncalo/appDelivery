@@ -2,9 +2,11 @@ package br.com.projetoDelivery.Model;
 
 import com.google.firebase.database.DatabaseReference;
 
+import java.io.Serializable;
+
 import br.com.projetoDelivery.Helper.ConfigFireBase;
 
-public class Empresa {
+public class Empresa implements Serializable {
 
     private String idUsuario;
     private String urlImagem;

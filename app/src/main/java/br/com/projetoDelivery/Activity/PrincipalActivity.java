@@ -12,6 +12,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.AdapterView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -27,6 +30,7 @@ import java.util.List;
 import br.com.projetoDelivery.Adapter.AdapterEmpresa;
 import br.com.projetoDelivery.Adapter.AdapterProduto;
 import br.com.projetoDelivery.Helper.ConfigFireBase;
+import br.com.projetoDelivery.Listener.RecyclerItemClickListener;
 import br.com.projetoDelivery.Model.Empresa;
 import br.com.projetoDelivery.R;
 
@@ -53,6 +57,7 @@ public class PrincipalActivity extends AppCompatActivity {
         configurarSearchView();
     }
 
+    //Pesquisa
     private void configurarSearchView(){
         //Configurar SearchView
         searchView.setHint("Pesquisar Estabelecimentos");
@@ -68,6 +73,30 @@ public class PrincipalActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+        //Configurar Clique
+        recyclerEmpresas.addOnItemTouchListener(new RecyclerItemClickListener(this, recyclerEmpresas, new RecyclerItemClickListener.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                Empresa empresaEscolhida = empresas.get(position);
+                Intent i = new Intent(PrincipalActivity.this, CatalogoActivity.class);
+                //Envia o objeto selecionado
+                i.putExtra("empresa", empresaEscolhida);
+                startActivity(i);
+            }
+
+            @Override
+            public void onLongItemClick(View view, int position) {
+
+            }
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+        }));
+
+
     }
 
     private void pesquisarEmpresas(String pesquisa){
