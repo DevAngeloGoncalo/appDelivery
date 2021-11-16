@@ -51,12 +51,25 @@ dependencies {
 //    implementation 'com.google.firebase:firebase-auth:16.0.3'
 
     //Biblioteca
+
+    //Firebase Storage
+    implementation 'com.firebaseui:firebase-ui-storage:7.2.0'
+
+    //SearchView
     implementation 'com.miguelcatalan:materialsearchview:1.4.0'
+
+    //CircleImageView
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //Picasso
     implementation 'com.squareup.picasso:picasso:2.71828'
+
+    //Glide - nao utilizado
     implementation 'com.github.bumptech.glide:glide:4.12.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
-    implementation 'com.firebaseui:firebase-ui-storage:7.2.0'
+
+    //SpotsDialog - Loading...
+    implementation 'com.github.d-max:spots-dialog:1.1@aar'
 
 
 //    implementation 'androidx.appcompat:appcompat:1.2.0'

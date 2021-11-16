@@ -11,13 +11,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f7cd365-fc4f-41f5-8b62-37895226ec72" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Model/Usuario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Model/ItemPedido.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Model/Pedido.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_catalogo.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/projetoDelivery.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/projetoDelivery.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/ConfigUsuarioActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/ConfigUsuarioActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/PrincipalActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/PrincipalActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_config_usuario.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_config_usuario.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/CatalogoActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/CatalogoActivity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +66,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="resourceFile" />
         <option value="Class" />
       </list>
     </option>
@@ -79,8 +82,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android-custom-viewC:/Users/angel/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.2.1/f0f93e67af3f7417bdd560d5142f6dec4fe629c3/recyclerview-1.2.1-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_SELECTED" value="RecyclerView" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/java" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/iFOOD/ifood-android-java-main/ifood-android-java-main/Ifood" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/iFOOD/1b-arquivos-aula-adicionando-itens-pedido-parte3/Ifood" />
+    <property name="multi-representation-previewC:/Users/angel/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.2.1/f0f93e67af3f7417bdd560d5142f6dec4fe629c3/recyclerview-1.2.1-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_selected" value="Custom views" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -248,42 +253,46 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="100" y="100" width="1336" height="624" key="AVDManager/0.0.1536.824@0.0.1536.824" timestamp="1636945337778" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1637014424177">
+    <state x="349" y="167" key="AndroidCreateResourceFileDialog" timestamp="1637027393805">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1637014424177" />
-    <state width="1491" height="123" key="GridCell.Tab.0.bottom" timestamp="1637004840369">
+    <state x="349" y="167" key="AndroidCreateResourceFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1637027393805" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1637030724671">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="123" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1637004840369" />
-    <state width="1491" height="123" key="GridCell.Tab.0.center" timestamp="1637004840369">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1637030724671" />
+    <state width="1491" height="123" key="GridCell.Tab.0.bottom" timestamp="1637031182389">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="123" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1637004840369" />
-    <state width="1491" height="123" key="GridCell.Tab.0.left" timestamp="1637004840369">
+    <state width="1491" height="123" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1637031182389" />
+    <state width="1491" height="123" key="GridCell.Tab.0.center" timestamp="1637031182389">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="123" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1637004840369" />
-    <state width="1491" height="123" key="GridCell.Tab.0.right" timestamp="1637004840369">
+    <state width="1491" height="123" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1637031182389" />
+    <state width="1491" height="123" key="GridCell.Tab.0.left" timestamp="1637031182388">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="123" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1637004840369" />
-    <state width="1491" height="123" key="GridCell.Tab.1.bottom" timestamp="1637004840369">
+    <state width="1491" height="123" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1637031182388" />
+    <state width="1491" height="123" key="GridCell.Tab.0.right" timestamp="1637031182389">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="123" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1637004840369" />
-    <state width="1491" height="123" key="GridCell.Tab.1.center" timestamp="1637004840369">
+    <state width="1491" height="123" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1637031182389" />
+    <state width="1491" height="123" key="GridCell.Tab.1.bottom" timestamp="1637031217968">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="123" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1637004840369" />
-    <state width="1491" height="123" key="GridCell.Tab.1.left" timestamp="1637004840369">
+    <state width="1491" height="123" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1637031217968" />
+    <state width="1491" height="123" key="GridCell.Tab.1.center" timestamp="1637031217967">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="123" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1637004840369" />
-    <state width="1491" height="123" key="GridCell.Tab.1.right" timestamp="1637004840369">
+    <state width="1491" height="123" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1637031217967" />
+    <state width="1491" height="123" key="GridCell.Tab.1.left" timestamp="1637031217967">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="123" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1637004840369" />
+    <state width="1491" height="123" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1637031217967" />
+    <state width="1491" height="123" key="GridCell.Tab.1.right" timestamp="1637031217968">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1491" height="123" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1637031217968" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1636857188761">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -300,13 +309,29 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="404" y="27" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1637000781331" />
-    <state x="475" y="145" width="586" height="534" key="find.popup" timestamp="1637024594982">
+    <state x="475" y="145" width="586" height="534" key="find.popup" timestamp="1637028642705">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="475" y="145" width="586" height="534" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1637024594982" />
+    <state x="475" y="145" width="586" height="534" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1637028642705" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1636997502462">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1636997502462" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/CatalogoActivity.java</url>
+          <line>158</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/CatalogoActivity.java</url>
+          <line>79</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
