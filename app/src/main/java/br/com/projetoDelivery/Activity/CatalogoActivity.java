@@ -44,7 +44,7 @@ public class CatalogoActivity extends AppCompatActivity {
 
     private RecyclerView recyclerProdutosCatalogo;
     private ImageView imageEmpresaCatalogo;
-    private TextView textNomeEmpresaCatalogo;
+    private TextView textNomeEmpresaCatalogo, textCarrinhoQuantidade, textCarrinhoTotal;
 
     private Empresa empresaEscolhida;
     private String idEmpresa;
@@ -59,6 +59,9 @@ public class CatalogoActivity extends AppCompatActivity {
     private Usuario usuario;
 
     private Pedido pedidoRecuperado;
+
+    private int qtdItensCarrinho;
+    private Double totalCarrinho;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -176,37 +179,39 @@ public class CatalogoActivity extends AppCompatActivity {
     }
 
     private void materializarPedido(){
-//        DatabaseReference pedidoRef = firebaseRef.child("pedidos_usuario").child(idEmpresa).child(idUsuarioLogado);
-//        pedidoRef.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                qtdItensCarrinho = 0;
-//                totalCarrinho = 0.0;
-//                itensCarrinho = new ArrayList<>();
-//                if(snapshot.getValue() !=null){
-//                    pedidoRecuperado = snapshot.getValue(Pedido.class);
-//                    itensCarrinho = pedidoRecuperado.getItens();
-//                    for(ItemPedido itemPedido : itensCarrinho){
-//                        int qtde = itemPedido.getQuantidade();
-//                        Double preco = itemPedido.getPreco();
-//
-//                        totalCarrinho += (qtde*preco);
-//                        qtdItensCarrinho += qtde;
-//                    }
-//                }
-//
-//                DecimalFormat df = new DecimalFormat("0.00");
-//                textCarrinhoQtd.setText("qtd: "+ qtdItensCarrinho);
-//                textCarrinhoTotal.setText("R$ "+df.format(totalCarrinho));
-//
+        DatabaseReference pedidoRef = firebaseRef.child("pedidos_usuario").child(idEmpresa).child(idUsuarioLogado);
+        pedidoRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                
+                qtdItensCarrinho = 0;
+                totalCarrinho = 0.0;
+                itensCarrinho = new ArrayList<>();
+
+                if(dataSnapshot.getValue() !=null){
+                    pedidoRecuperado = dataSnapshot.getValue(Pedido.class);
+                    itensCarrinho = pedidoRecuperado.getItens();
+                    for(ItemPedido itemPedido : itensCarrinho){
+                        int qtde = itemPedido.getQuantidade();
+                        Double preco = itemPedido.getPreco();
+
+                        totalCarrinho += (qtde*preco);
+                        qtdItensCarrinho += qtde;
+                    }
+                }
+
+                DecimalFormat df = new DecimalFormat("0.00");
+                textCarrinhoQuantidade.setText("qtd: "+ qtdItensCarrinho);
+                textCarrinhoTotal.setText("R$ "+df.format(totalCarrinho));
+
                 dialog.dismiss();
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     private void materializarProdutos(){
@@ -248,6 +253,9 @@ public class CatalogoActivity extends AppCompatActivity {
         imageEmpresaCatalogo = findViewById(R.id.imageEmpresaCatalogo);
         firebaseRef = ConfigFireBase.getFirebase();
         idUsuarioLogado = UsuarioFireBase.getIdUsuario();
+
+        textCarrinhoQuantidade = findViewById(R.id.textCarrinhoQtd);
+        textCarrinhoTotal = findViewById(R.id.textCarrinhoTotal);
 
         //Configurações Toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
