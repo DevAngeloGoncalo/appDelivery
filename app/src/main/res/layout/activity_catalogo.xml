@@ -26,13 +26,13 @@
             android:orientation="horizontal">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/imageEmpresaCardapio"
+                android:id="@+id/imageEmpresaCatalogo"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:src="@drawable/perfil" />
 
             <TextView
-                android:id="@+id/textNomeEmpresaCardapio"
+                android:id="@+id/textNomeEmpresaCatalogo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -84,7 +84,7 @@
         <include layout="@layout/divisor" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerProdutosCardapio"
+            android:id="@+id/recyclerProdutosCatalogo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="16dp"
