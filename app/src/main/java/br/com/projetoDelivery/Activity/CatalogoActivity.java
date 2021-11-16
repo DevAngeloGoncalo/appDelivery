@@ -183,7 +183,7 @@ public class CatalogoActivity extends AppCompatActivity {
         pedidoRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                
+
                 qtdItensCarrinho = 0;
                 totalCarrinho = 0.0;
                 itensCarrinho = new ArrayList<>();

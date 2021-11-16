@@ -56,13 +56,14 @@
             android:gravity="center"
             android:orientation="horizontal">
 
+            //Estudar possibilidade de criar uma Activity para mostrar os itens
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
                 android:text="Ver carrinho"
-                android:textColor="#ffff" />
+                android:textColor="@color/branco" />
 
             <TextView
                 android:id="@+id/textCarrinhoQtd"
@@ -70,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:padding="8dp"
                 android:text="qtd: 0"
-                android:textColor="#ffff" />
+                android:textColor="@color/branco" />
 
             <TextView
                 android:id="@+id/textCarrinhoTotal"
@@ -78,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:padding="8dp"
                 android:text="R$ 0"
-                android:textColor="#ffff" />
+                android:textColor="@color/branco" />
         </LinearLayout>
 
         <include layout="@layout/divisor" />

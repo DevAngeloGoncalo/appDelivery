@@ -52,7 +52,7 @@
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:text="Logar"
-            android:textColor="#FFFFFF" />
+            android:textColor="@color/branco" />
 
         <Switch
             android:id="@+id/switchAcesso"
@@ -66,7 +66,7 @@
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:text="Cadastre-se"
-            android:textColor="#FFFFFF"/>
+            android:textColor="@color/branco"/>
     </LinearLayout>
 
     <LinearLayout
@@ -84,7 +84,7 @@
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:text="Usuário"
-            android:textColor="#FFFFFF" />
+            android:textColor="@color/branco" />
 
         <Switch
             android:id="@+id/switchTipoUsuario"
@@ -98,7 +98,7 @@
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:text="Empresa"
-            android:textColor="#FFFFFF" />
+            android:textColor="@color/branco" />
     </LinearLayout>
 
     <Button
