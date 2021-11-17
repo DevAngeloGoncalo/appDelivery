@@ -11,8 +11,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f7cd365-fc4f-41f5-8b62-37895226ec72" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/PedidosActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Adapter/AdapterPedido.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_pedidos.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/adapter_pedidos.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/CatalogoActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/CatalogoActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,18 +93,22 @@
     <key name="android.template.-993373947">
       <recent name="br.com.projetoDelivery.Activity" />
     </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="br.com.projetoDelivery" />
-      <recent name="com.projetoDelivery" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\angel\Documents\Android Studio\Nova pasta\projetoDelivery\app\src\main\res\values" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\angel\Documents\Android Studio\projetoDelivery\app\src\main\res\layout" />
       <recent name="C:\Users\angel\Documents\Android Studio\projetoDelivery\app\src\main\java\br\com\projetoDelivery\Adapter" />
       <recent name="C:\Users\angel\Desktop\iFOOD\projetoDelivery\app" />
       <recent name="C:\Users\angel\Desktop\iFOOD\projetoDelivery\app\src" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="br.com.projetoDelivery" />
+      <recent name="com.projetoDelivery" />
+    </key>
+    <key name="android.template.1787586132">
+      <recent name="br.com.projetoDelivery.Adapter" />
+      <recent name="br.com.projetoDelivery.Activity" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\angel\Documents\Android Studio\Nova pasta\projetoDelivery\app\src\main\res\values" />
     </key>
   </component>
   <component name="RunManager" selected="Android App.app">
@@ -238,10 +247,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="551" y="281" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1637011982749" />
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1636943747477">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1637122273698">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1636943747477" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1637122273698" />
     <state x="100" y="100" width="1336" height="624" key="AVDManager" timestamp="1636945337778">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
