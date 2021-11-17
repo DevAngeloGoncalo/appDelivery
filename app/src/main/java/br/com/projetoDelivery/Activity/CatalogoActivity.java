@@ -17,6 +17,7 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -62,6 +63,8 @@ public class CatalogoActivity extends AppCompatActivity {
 
     private int qtdItensCarrinho;
     private Double totalCarrinho;
+
+    private int metodoPagamento;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -281,10 +284,57 @@ public class CatalogoActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.menuPedido:
-//                deslogarUsuario();
+                confirmarPedido();
                 break;
 
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void confirmarPedido(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Selecione forma de pagamento");
+
+
+        //vai guardar a posicao
+        CharSequence[] itens = new CharSequence[]{
+                "Dinheiro", "Máquina cartão"
+        };
+
+        //Botões de seleção
+        builder.setSingleChoiceItems(itens, 0, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                metodoPagamento = which;
+
+            }
+        });
+
+        EditText editObservacao = new EditText(this);
+        editObservacao.setHint("Observações:'Troco para 50'");
+        builder.setView(editObservacao);
+        builder.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String observacao = editObservacao.getText().toString();
+                pedidoRecuperado.setMetodoPagamento(metodoPagamento);
+                pedidoRecuperado.setObservacao(observacao);
+                pedidoRecuperado.setStatus("confirmado");
+                pedidoRecuperado.confirmar();
+                pedidoRecuperado.excluir();
+                pedidoRecuperado = null;
+                Toast.makeText(CatalogoActivity.this, "Pedido enviado para a loja.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }
