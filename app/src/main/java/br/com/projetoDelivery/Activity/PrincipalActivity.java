@@ -193,7 +193,7 @@ public class PrincipalActivity extends AppCompatActivity {
         fireBaseRef = ConfigFireBase.getFirebase();
 
         //Configurações Toolbar
-        toolbar.setTitle("projetoDelivery");
+        toolbar.setTitle("Pede Feira");
         setSupportActionBar(toolbar);
 
         //Configura RecyclerView

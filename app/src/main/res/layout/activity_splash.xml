@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activity.SplashActivity"
-    android:background="#ea1d2c">
+    android:background="@color/azulClaro">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:src="@drawable/logo"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:src="@drawable/logoapp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

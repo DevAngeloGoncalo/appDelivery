@@ -29,7 +29,7 @@
             android:inputType="text"
             android:padding="16dp"
             android:textColor="@color/preto"
-            android:textColorHint="@android:color/darker_gray" />
+            android:textColorHint="@color/azulEscuro" />
 
         <EditText
             android:id="@+id/editUsuarioEndereco"
@@ -42,7 +42,7 @@
             android:inputType="text"
             android:padding="16dp"
             android:textColor="@color/preto"
-            android:textColorHint="@android:color/darker_gray" />
+            android:textColorHint="@color/azulEscuro" />
 
         <Button
             android:layout_width="match_parent"

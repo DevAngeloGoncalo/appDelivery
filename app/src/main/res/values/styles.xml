@@ -4,14 +4,14 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/azulEscuro</item>
     </style>
 
     //Criando design de botões padrões
     <style name="botaoPadrao" parent="Theme.AppCompat.Light">
-        <item name="colorControlHighlight">@color/rosinha</item>
-        <item name="colorButtonNormal">@color/colorAccent</item>
-        <item name="android:textColor">@android:color/white</item>
+        <item name="colorControlHighlight">@color/branco</item>
+        <item name="colorButtonNormal">@color/azulEscuro</item>
+        <item name="android:textColor">@color/branco</item>
     </style>
 
 </resources>

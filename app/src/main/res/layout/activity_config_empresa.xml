@@ -37,7 +37,8 @@
             android:ems="10"
             android:hint="Nome Fantasia"
             android:inputType="text"
-            android:padding="16dp" />
+            android:padding="16dp"
+            android:textColorHint="@color/azulEscuro"/>
 
         <EditText
             android:id="@+id/editEmpresaCategoria"
@@ -48,7 +49,8 @@
             android:ems="10"
             android:hint="Categoria"
             android:inputType="text"
-            android:padding="16dp" />
+            android:padding="16dp"
+            android:textColorHint="@color/azulEscuro"/>
 
         <EditText
             android:id="@+id/editEmpresaEntregaTempo"
@@ -59,7 +61,8 @@
             android:ems="10"
             android:hint="Tempo de Entrega"
             android:inputType="text"
-            android:padding="16dp" />
+            android:padding="16dp"
+            android:textColorHint="@color/azulEscuro"/>
 
         <EditText
             android:id="@+id/editEmpresaEntregaTaxa"
@@ -70,7 +73,8 @@
             android:ems="10"
             android:hint="Taxa Entrega"
             android:inputType="numberDecimal"
-            android:padding="16dp" />
+            android:padding="16dp"
+            android:textColorHint="@color/azulEscuro"/>
 
         <Button
             android:id="@+id/buttonAcesso2"

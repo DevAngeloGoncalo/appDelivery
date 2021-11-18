@@ -35,7 +35,8 @@
             android:ems="10"
             android:hint="Nome Produto"
             android:inputType="text"
-            android:padding="16dp" />
+            android:padding="16dp"
+            android:textColorHint="@color/azulEscuro"/>
 
         <EditText
             android:id="@+id/editProdutoDescricao"
@@ -46,7 +47,8 @@
             android:ems="10"
             android:hint="Descrição"
             android:inputType="text"
-            android:padding="16dp" />
+            android:padding="16dp"
+            android:textColorHint="@color/azulEscuro"/>
 
 
         <EditText
@@ -58,7 +60,8 @@
             android:ems="10"
             android:hint="Preço"
             android:inputType="numberDecimal"
-            android:padding="16dp" />
+            android:padding="16dp"
+            android:textColorHint="@color/azulEscuro"/>
 
         <Button
             android:id="@+id/buttonAcesso2"

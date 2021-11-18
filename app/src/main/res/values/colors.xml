@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#FFFFFFFF</color>
-    <color name="colorPrimaryDark">#a50a15</color>
+    <color name="colorPrimaryDark">#004AAD</color>
+<!--    <color name="colorPrimaryDark">#a50a15</color>-->
     <color name="colorAccent">#870912</color>
     <color name="vermelhoEscuro">#a50a15</color>
     <color name="rosinha">#ff404e</color>
     <color name="preto">#000000</color>
     <color name="branco">#FFFFFFFF</color>
+    <color name="azulClaro">#38B6FF</color>
+    <color name="azulEscuro">#004AAD</color>
+
 
 
     //Mudar cores padrao do app
