@@ -11,12 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f7cd365-fc4f-41f5-8b62-37895226ec72" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/CatalogoActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/CatalogoActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/ConfigUsuarioActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/ConfigUsuarioActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Model/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_config_usuario.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_config_usuario.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -50,7 +50,7 @@ public class ConfigUsuarioActivity extends AppCompatActivity {
                     editUsuarioNome.setText(usuario.getNome());
                     editCEP.setText(usuario.getCEP());
                     editEstado.setText(usuario.getUF());
-                    editCidade.setText(usuario.getUF());
+                    editCidade.setText(usuario.getCidade());
                     editUsuarioBairro.setText(usuario.getBairro());
                     editUsuarioLogradouro.setText(usuario.getLogradouro());
 
