@@ -55,7 +55,7 @@ public class CatalogoActivity extends AppCompatActivity {
     private List<ItemPedido> itensCarrinho = new ArrayList<>();
     private DatabaseReference firebaseRef;
 
-    private AlertDialog dialog; //app
+    private AlertDialog alertDialog; //app
     private String idUsuarioLogado;
     private Usuario usuario;
 
@@ -158,9 +158,9 @@ public class CatalogoActivity extends AppCompatActivity {
     }
 
     private void materializarDadosUsuario(){
-        dialog = new SpotsDialog.Builder().setContext(this).setMessage("Carregando dados").setCancelable(false).build();
+        alertDialog = new SpotsDialog.Builder().setContext(this).setMessage("Carregando dados").setCancelable(false).build();
 
-        dialog.show();
+        alertDialog.show();
 
         DatabaseReference usuariosRef = firebaseRef.child("usuarios").child(idUsuarioLogado);
         usuariosRef.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -207,7 +207,7 @@ public class CatalogoActivity extends AppCompatActivity {
                 textCarrinhoQuantidade.setText("qtd: "+ qtdItensCarrinho);
                 textCarrinhoTotal.setText("R$ "+df.format(totalCarrinho));
 
-                dialog.dismiss();
+                alertDialog.dismiss();
             }
 
             @Override
