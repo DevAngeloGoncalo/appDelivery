@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.AlertDialog;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -21,6 +23,7 @@ import java.util.List;
 import br.com.projetoDelivery.Adapter.AdapterPedido;
 import br.com.projetoDelivery.Helper.ConfigFireBase;
 import br.com.projetoDelivery.Helper.UsuarioFireBase;
+import br.com.projetoDelivery.Listener.RecyclerItemClickListener;
 import br.com.projetoDelivery.Model.Pedido;
 import br.com.projetoDelivery.R;
 import dmax.dialog.SpotsDialog;
@@ -42,6 +45,30 @@ public class PedidosActivity extends AppCompatActivity {
         inicializarComponentes();
 
         materializarPedidos();
+
+        eventoClique();
+    }
+
+    private void eventoClique(){
+        recyclerPedidos.addOnItemTouchListener(new RecyclerItemClickListener(this, recyclerPedidos, new RecyclerItemClickListener.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+
+            }
+
+            @Override
+            public void onLongItemClick(View view, int position) {
+                //Cogitar colocar um AlertDialog
+                Pedido pedido = pedidos.get(position);
+                pedido.setStatus("finalizado");
+                pedido.atualizarStatus();
+            }
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+        }));
     }
 
     private void materializarPedidos(){
