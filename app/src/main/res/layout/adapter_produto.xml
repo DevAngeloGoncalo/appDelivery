@@ -29,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:text="Leite em Pó"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="@color/azulEscuro"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -46,7 +46,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="R$ 10.50"
-                android:textColor="@android:color/holo_green_light"
+                android:textColor="@color/azulClaro"
                 android:textSize="18sp"
                 android:textStyle="bold" />
         </LinearLayout>

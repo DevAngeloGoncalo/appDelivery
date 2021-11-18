@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -8,7 +10,9 @@
         android:layout_height="wrap_content"
         android:background="@color/azulEscuro"
         android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme" />
+        android:theme="@style/AppTheme.Toolbar"
+        app:popupTheme="@style/CustomTheme"
+        app:titleTextColor="@color/branco"/>
     <com.miguelcatalan.materialsearchview.MaterialSearchView
         android:id="@+id/materialSearchView"
         android:layout_width="match_parent"

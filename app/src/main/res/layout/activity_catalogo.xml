@@ -38,7 +38,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
                 android:text="China in box"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="@color/azulEscuro"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -52,15 +52,17 @@
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="16dp"
-            android:background="@color/azulClaro"
+            android:background="@color/azulEscuro"
             android:gravity="center"
             android:orientation="horizontal">
 
             //Estudar possibilidade de criar uma Activity para mostrar os itens
+
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/textVerCarrinho"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@color/azulEscuro"
                 android:padding="8dp"
                 android:text="Ver carrinho"
                 android:textColor="@color/branco" />
@@ -69,6 +71,7 @@
                 android:id="@+id/textCarrinhoQtd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@color/azulEscuro"
                 android:padding="8dp"
                 android:text="qtd: 0"
                 android:textColor="@color/branco" />
@@ -77,6 +80,7 @@
                 android:id="@+id/textCarrinhoTotal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@color/azulEscuro"
                 android:padding="8dp"
                 android:text="R$ 0"
                 android:textColor="@color/branco" />
