@@ -10,6 +10,7 @@ import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -62,6 +63,11 @@ public class PedidosActivity extends AppCompatActivity {
                 Pedido pedido = pedidos.get(position);
                 pedido.setStatus("finalizado");
                 pedido.atualizarStatus();
+
+                Toast.makeText(PedidosActivity.this,
+                        "Pedido excluido!", Toast.LENGTH_SHORT).show();
+
+                adapterPedido.notifyDataSetChanged();
             }
 
             @Override
@@ -69,6 +75,8 @@ public class PedidosActivity extends AppCompatActivity {
 
             }
         }));
+        //Atualiza tela quando for o ultimo pedido a ser excluido
+        adapterPedido.notifyDataSetChanged();
     }
 
     private void materializarPedidos(){
@@ -91,7 +99,6 @@ public class PedidosActivity extends AppCompatActivity {
                     }
                     adapterPedido.notifyDataSetChanged();
                 }
-                alertDialog.dismiss();
             }
 
             @Override
@@ -99,6 +106,8 @@ public class PedidosActivity extends AppCompatActivity {
 
             }
         });
+
+        alertDialog.dismiss();
     }
 
     private void inicializarComponentes(){
