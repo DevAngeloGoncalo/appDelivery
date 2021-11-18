@@ -139,7 +139,7 @@ public class CatalogoActivity extends AppCompatActivity {
                 }
 
                 pedidoRecuperado.setNome(usuario.getNome());
-                pedidoRecuperado.setEndereco(usuario.getEndereco());
+                pedidoRecuperado.setEndereco(usuario.getLogradouro());
                 pedidoRecuperado.setItens(itensCarrinho);
                 pedidoRecuperado.salvar();
             }

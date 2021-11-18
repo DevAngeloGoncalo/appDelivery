@@ -29,20 +29,134 @@
             android:inputType="text"
             android:padding="16dp"
             android:textColor="@color/azulEscuro"
-            android:textColorHint="@color/azulEscuro" />
+            android:textColorHint="@color/azulClaro" />
 
         <EditText
-            android:id="@+id/editUsuarioEndereco"
+            android:id="@+id/editCEP"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="-2dp"
             android:background="@drawable/bg_edit_text"
             android:ems="10"
-            android:hint="Endereço completo"
+            android:hint="CEP"
             android:inputType="text"
             android:padding="16dp"
             android:textColor="@color/azulEscuro"
-            android:textColorHint="@color/azulEscuro" />
+            android:textColorHint="@color/azulClaro" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <EditText
+                android:id="@+id/editEstado"
+                android:layout_width="78dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-2dp"
+                android:background="@drawable/bg_edit_text"
+                android:ems="10"
+                android:hint="UF"
+                android:inputType="text"
+                android:padding="16dp"
+                android:paddingLeft="8dp"
+                android:paddingTop="8dp"
+                android:paddingRight="8dp"
+                android:paddingBottom="8dp"
+                android:textColor="@color/azulEscuro"
+                android:textColorHint="@color/azulClaro" />
+
+            <EditText
+                android:id="@+id/editCidade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-2dp"
+                android:background="@drawable/bg_edit_text"
+                android:ems="10"
+                android:hint="Cidade"
+                android:inputType="text"
+                android:padding="16dp"
+                android:paddingLeft="8dp"
+                android:paddingTop="8dp"
+                android:paddingRight="8dp"
+                android:paddingBottom="8dp"
+                android:textColor="@color/azulEscuro"
+                android:textColorHint="@color/azulClaro" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/editUsuarioBairro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-2dp"
+            android:background="@drawable/bg_edit_text"
+            android:ems="10"
+            android:hint="Bairro"
+            android:inputType="text"
+            android:padding="16dp"
+            android:textColor="@color/azulEscuro"
+            android:textColorHint="@color/azulClaro" />
+
+        <EditText
+            android:id="@+id/editUsuarioLogradouro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-2dp"
+            android:background="@drawable/bg_edit_text"
+            android:ems="10"
+            android:hint="Logradouro"
+            android:inputType="text"
+            android:padding="16dp"
+            android:textColor="@color/azulEscuro"
+            android:textColorHint="@color/azulClaro" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <EditText
+                android:id="@+id/editNumeroEndereco"
+                android:layout_width="78dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-2dp"
+                android:background="@drawable/bg_edit_text"
+                android:ems="10"
+                android:hint="N°"
+                android:inputType="text"
+                android:padding="16dp"
+                android:textColor="@color/azulEscuro"
+                android:textColorHint="@color/azulClaro" />
+
+        <EditText
+            android:id="@+id/editUsuarioComplemento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-2dp"
+            android:background="@drawable/bg_edit_text"
+            android:ems="10"
+            android:hint="Complemento"
+            android:inputType="text"
+            android:padding="16dp"
+            android:textColor="@color/azulEscuro"
+            android:textColorHint="@color/azulClaro" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/editNumeroContato"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-2dp"
+            android:background="@drawable/bg_edit_text"
+            android:ems="10"
+            android:hint="(xx) 99999-9999"
+            android:inputType="text"
+            android:padding="16dp"
+            android:textColor="@color/azulEscuro"
+            android:textColorHint="@color/azulClaro" />
 
         <Button
             android:layout_width="match_parent"

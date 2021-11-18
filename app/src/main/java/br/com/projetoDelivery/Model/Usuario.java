@@ -7,7 +7,14 @@ import br.com.projetoDelivery.Helper.ConfigFireBase;
 public class Usuario {
     private String idUsuario;
     private String nome;
-    private String endereco;
+    private String CEP;
+    private String UF;
+    private String Cidade;
+    private String Bairro;
+    private String Logradouro;
+    private int NumeroEndereco;
+    private String Complemento;
+    private String NumeroContato;
 
     public Usuario() {
     }
@@ -35,11 +42,67 @@ public class Usuario {
         this.nome = nome;
     }
 
-    public String getEndereco() {
-        return endereco;
+    public String getCEP() {
+        return CEP;
     }
 
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
+    public void setCEP(String CEP) {
+        this.CEP = CEP;
+    }
+
+    public String getUF() {
+        return UF;
+    }
+
+    public void setUF(String UF) {
+        this.UF = UF;
+    }
+
+    public String getCidade() {
+        return Cidade;
+    }
+
+    public void setCidade(String cidade) {
+        Cidade = cidade;
+    }
+
+    public String getBairro() {
+        return Bairro;
+    }
+
+    public void setBairro(String bairro) {
+        Bairro = bairro;
+    }
+
+    public int getNumeroEndereco() {
+        return NumeroEndereco;
+    }
+
+    public void setNumeroEndereco(int numeroEndereco) {
+        NumeroEndereco = numeroEndereco;
+    }
+
+    public String getComplemento() {
+        return Complemento;
+    }
+
+    public void setComplemento(String complemento) {
+        Complemento = complemento;
+    }
+
+    public String getNumeroContato() {
+        return NumeroContato;
+    }
+
+    public void setNumeroContato(String numeroContato) {
+        NumeroContato = numeroContato;
+    }
+
+    public String getLogradouro() {
+        return Logradouro;
+    }
+
+    public void setLogradouro(String logradouro) {
+        Logradouro = logradouro;
     }
 }

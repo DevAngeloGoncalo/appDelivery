@@ -21,7 +21,9 @@ import br.com.projetoDelivery.R;
 
 public class ConfigUsuarioActivity extends AppCompatActivity {
 
-    private EditText editUsuarioNome, editUsuarioEndereco;
+    private EditText editUsuarioNome, editUsuarioComplemento,
+            editCEP, editEstado, editCidade, editUsuarioBairro, editUsuarioLogradouro,
+            editNumeroEndereco, editNumeroContato;
     private String idUsuario;
     private DatabaseReference firebaseRef;
 
@@ -46,7 +48,17 @@ public class ConfigUsuarioActivity extends AppCompatActivity {
                 if(dataSnapshot.getValue() !=null){
                     Usuario usuario = dataSnapshot.getValue(Usuario.class);
                     editUsuarioNome.setText(usuario.getNome());
-                    editUsuarioEndereco.setText(usuario.getEndereco());
+                    editCEP.setText(usuario.getCEP());
+                    editEstado.setText(usuario.getUF());
+                    editCidade.setText(usuario.getUF());
+                    editUsuarioBairro.setText(usuario.getBairro());
+                    editUsuarioLogradouro.setText(usuario.getLogradouro());
+
+                    String numeroEndereco = String.valueOf(usuario.getNumeroEndereco());
+
+                    editNumeroEndereco.setText(numeroEndereco);
+                    editNumeroContato.setText(usuario.getNumeroContato());
+                    editUsuarioComplemento.setText(usuario.getComplemento());
                 }
             }
 
@@ -64,28 +76,80 @@ public class ConfigUsuarioActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        editUsuarioEndereco = findViewById(R.id.editUsuarioEndereco);
         editUsuarioNome = findViewById(R.id.editUsuarioNome);
+        editCEP = findViewById(R.id.editCEP);
+        editEstado = findViewById(R.id.editEstado);
+        editCidade = findViewById(R.id.editCidade);
+        editUsuarioBairro = findViewById(R.id.editUsuarioBairro);
+        editUsuarioLogradouro = findViewById(R.id.editUsuarioLogradouro);
+        editNumeroEndereco = findViewById(R.id.editNumeroEndereco);
+        editUsuarioComplemento = findViewById(R.id.editUsuarioComplemento);
+        editNumeroContato = findViewById(R.id.editNumeroContato);
+
 
         firebaseRef = ConfigFireBase.getFirebase();
         idUsuario = UsuarioFireBase.getIdUsuario();
     }
     public void validarDadosUsuario(View view){
         String nome = editUsuarioNome.getText().toString();
-        String endereco = editUsuarioEndereco.getText().toString();
+        String cep = editCEP.getText().toString();
+        String estado = editEstado.getText().toString();
+        String cidade = editCidade.getText().toString();
+        String bairro = editUsuarioBairro.getText().toString();
+        String logradouro = editUsuarioLogradouro.getText().toString();
+        String numeroEndereco = editNumeroEndereco.getText().toString();
+        String complemento = editUsuarioComplemento.getText().toString();
+        String numeroContato = editNumeroContato.getText().toString();
 
+
+        //Pensar em uma forma melhor
         if(!nome.isEmpty()){
-            if(!endereco.isEmpty()){
-                Usuario usuario = new Usuario();
-                usuario.setIdUsuario(idUsuario);
-                usuario.setNome(nome);
-                usuario.setEndereco(endereco);
-                usuario.salvar();
-                exibirMensagem("Dados atualizado com sucesso!");
-                finish();
+            if(!cep.isEmpty()){
+                if(!estado.isEmpty()){
+                    if(!cidade.isEmpty()){
+                        if(!bairro.isEmpty()){
+                            if(!logradouro.isEmpty()){
+                                if(!numeroEndereco.isEmpty()){
+                                    if(!complemento.isEmpty()){
+                                        if(!numeroContato.isEmpty()){
+                                            Usuario usuario = new Usuario();
+                                            usuario.setNumeroContato(numeroContato);
+                                            usuario.setIdUsuario(idUsuario);
+                                            usuario.setNome(nome);
+                                            usuario.setCEP(cep);
+                                            usuario.setUF(estado);
+                                            usuario.setCidade(cidade);
+                                            usuario.setBairro(bairro);
+                                            usuario.setLogradouro(logradouro);
+                                            usuario.setNumeroEndereco(Integer.parseInt(numeroEndereco));
+                                            usuario.setComplemento(complemento);
 
+                                            usuario.salvar();
+                                            exibirMensagem("Dados atualizado com sucesso!");
+                                            finish();
+                                        }else{
+                                            exibirMensagem("Digite seu Númere de Celular!");
+                                        }
+                                    }else{
+                                        exibirMensagem("Digite seu Complemento!");
+                                    }
+                                }else{
+                                    exibirMensagem("Digite seu Número");
+                                }
+                            }else{
+                                exibirMensagem("Digite seu logradouro!");
+                            }
+                        }else{
+                            exibirMensagem("Digite seu Bairro!");
+                        }
+                    }else{
+                        exibirMensagem("Digite sua Cidade!");
+                    }
+                }else{
+                    exibirMensagem("Digite seu Estado!");
+                }
             }else{
-                exibirMensagem("Digite seu endereço completo!");
+                exibirMensagem("Digite seu CEP!");
             }
         }else{
             exibirMensagem("Digite seu nome!");
