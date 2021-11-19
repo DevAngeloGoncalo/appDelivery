@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -44,6 +45,7 @@ public class PrincipalActivity extends AppCompatActivity {
 
     private DatabaseReference fireBaseRef;
     private AdapterEmpresa adapterEmpresa;
+    private int backButtonCount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +58,26 @@ public class PrincipalActivity extends AppCompatActivity {
 
         configurarSearchView();
     }
+
+
+    //Sair do App
+    @Override
+    public void onBackPressed()
+    {
+        if(backButtonCount >= 1)
+        {
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_HOME);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        }
+        else
+        {
+            Toast.makeText(this, "Pressione novamente para sair do app", Toast.LENGTH_SHORT).show();
+            backButtonCount++;
+        }
+    }
+
 
     //Pesquisa
     private void configurarSearchView(){

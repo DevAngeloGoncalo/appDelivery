@@ -39,12 +39,9 @@ public class AutenticacaoActivity extends AppCompatActivity {
     private Switch tipoAcesso, tipoUsuario;
     private LinearLayout linearTipoUsuario;
 
-    public String Flag = "";
-
     private FirebaseAuth autenticacao;
     private DatabaseReference firebaseRef;
     private String idUsuario;
-    private boolean autenticado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,9 +102,7 @@ public class AutenticacaoActivity extends AppCompatActivity {
     }
 
     private void login(String email, String senha){
-        autenticacao.signInWithEmailAndPassword(
-                email, senha
-        ).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        autenticacao.signInWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful())
@@ -116,7 +111,8 @@ public class AutenticacaoActivity extends AppCompatActivity {
                             "Login realizado com sucesso!",
                             Toast.LENGTH_SHORT).show();
                     String tipoUsuario = task.getResult().getUser().getDisplayName();
-                    usuarioAutentico(tipoUsuario);
+                    abrirTelaPrincipal(tipoUsuario);
+                    //usuarioAutentico(tipoUsuario);
                 }else
                 {
                     String erroExcecaoLogin = "";
@@ -159,7 +155,6 @@ public class AutenticacaoActivity extends AppCompatActivity {
                     String tipoUsuario = getTipoUsuario();
                     UsuarioFireBase.atualizarTipoUsuario(tipoUsuario);
                     abrirTelaCadastro(tipoUsuario);
-                    Flag = "C";
                 }
                 else
                 {

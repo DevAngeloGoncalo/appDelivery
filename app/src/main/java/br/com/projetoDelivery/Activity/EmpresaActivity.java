@@ -39,6 +39,7 @@ public class EmpresaActivity extends AppCompatActivity {
     private List<Produto> produtos = new ArrayList<>();
     private DatabaseReference firebaseRef;
     private String idUsuarioLogado;
+    private int backButtonCount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +77,24 @@ public class EmpresaActivity extends AppCompatActivity {
         }
         ));
 
+    }
+
+    //Sair do App
+    @Override
+    public void onBackPressed()
+    {
+        if(backButtonCount >= 1)
+        {
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_HOME);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        }
+        else
+        {
+            Toast.makeText(this, "Pressione novamente para sair do app", Toast.LENGTH_SHORT).show();
+            backButtonCount++;
+        }
     }
 
     private void materializarProdutos(){
@@ -126,9 +145,15 @@ public class EmpresaActivity extends AppCompatActivity {
             //Pedir  CONFIRMAÇÃO AG20211115
             autenticacao.signOut();
             finish();
+
+            TelaInicial();
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    private void TelaInicial(){
+        startActivity(new Intent(EmpresaActivity.this, AutenticacaoActivity.class));
     }
 
     private void inicializarComponentes(){

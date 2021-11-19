@@ -86,6 +86,12 @@ public class ConfigEmpresaActivity extends AppCompatActivity {
 
                     urlImagemEscolhida = empresa.getUrlImagem();
 
+                    //Configurações Toolbar
+                    Toolbar toolbar = findViewById(R.id.toolbar);
+                    toolbar.setTitle("Configurações");
+                    setSupportActionBar(toolbar);
+                    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
                     if(urlImagemEscolhida != ""){
                         Picasso.get().load(urlImagemEscolhida).into(imagePerfilEmpresa);
                     }
@@ -121,6 +127,7 @@ public class ConfigEmpresaActivity extends AppCompatActivity {
                         empresa.salvar();
                         finish();
 
+                        abrirTelaPrincipalEmpresa();
                     }else{
                         exibirMensagem("Digite um tempo de entrega");
                     }
@@ -133,6 +140,10 @@ public class ConfigEmpresaActivity extends AppCompatActivity {
         }else{
             exibirMensagem("Digite um nome para a empresa");
         }
+    }
+
+    private void abrirTelaPrincipalEmpresa(){
+        startActivity(new Intent(getApplicationContext(), EmpresaActivity.class));
     }
 
     private void exibirMensagem(String texto){
@@ -181,29 +192,6 @@ public class ConfigEmpresaActivity extends AppCompatActivity {
                             }
                         }
                     });
-                            //Upload
-//                    uploadTask.addOnFailureListener(new OnFailureListener() {
-//                        @Override
-//                        public void onFailure(@NonNull Exception e) {
-//                            Toast.makeText(ConfigEmpresaActivity.this, "ERRO AO FAZER UPLOAD DA IMAGEM",Toast.LENGTH_SHORT).show();
-//                        }
-//                    }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-//                        @Override
-//                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-//                            //urlImagemEscolhida  = taskSnapshot.getStorage().getDownloadUrl().toString();
-//
-//
-//                            imagemRef.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
-//                                @Override
-//                                public void onComplete(@NonNull Task<Uri> task) {
-//                                    Uri url = task.getResult();
-//
-//                                }
-//                            });
-//
-//                            Toast.makeText(ConfigEmpresaActivity.this, "SUCESSO AO FAZER UPLOAD DA IMAGEM",Toast.LENGTH_SHORT).show();
-//                        }
-//                    });
                 }
 
             } catch (Exception e) {
@@ -228,7 +216,7 @@ public class ConfigEmpresaActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("Configurações");
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
     }
