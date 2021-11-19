@@ -15,6 +15,7 @@ public class Usuario {
     private int NumeroEndereco;
     private String Complemento;
     private String NumeroContato;
+    private boolean autenticado;
 
     public Usuario() {
     }
@@ -104,5 +105,13 @@ public class Usuario {
 
     public void setLogradouro(String logradouro) {
         Logradouro = logradouro;
+    }
+
+    public boolean isAutenticado() {
+        return autenticado;
+    }
+
+    public void setAutenticado(boolean autenticado) {
+        this.autenticado = autenticado;
     }
 }

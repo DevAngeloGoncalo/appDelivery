@@ -22,9 +22,14 @@ import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
 
 import br.com.projetoDelivery.Helper.ConfigFireBase;
 import br.com.projetoDelivery.Helper.UsuarioFireBase;
+import br.com.projetoDelivery.Model.Usuario;
 import br.com.projetoDelivery.R;
 
 public class AutenticacaoActivity extends AppCompatActivity {
@@ -35,6 +40,9 @@ public class AutenticacaoActivity extends AppCompatActivity {
     private LinearLayout linearTipoUsuario;
 
     private FirebaseAuth autenticacao;
+    private DatabaseReference firebaseRef;
+    private String idUsuario;
+    private boolean autenticado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,7 +114,7 @@ public class AutenticacaoActivity extends AppCompatActivity {
                             "Login realizado com sucesso!",
                             Toast.LENGTH_SHORT).show();
                     String tipoUsuario = task.getResult().getUser().getDisplayName();
-                    abrirTelaPrincipal(tipoUsuario);
+                    usuarioAutentico(tipoUsuario);
                 }else
                 {
                     String erroExcecaoLogin = "";
@@ -127,10 +135,6 @@ public class AutenticacaoActivity extends AppCompatActivity {
                     Toast.makeText(AutenticacaoActivity.this,
                             "Erro:" + erroExcecaoLogin ,
                             Toast.LENGTH_LONG).show();
-
-//                    Toast.makeText(AutenticacaoActivity.this,
-//                            "Erro ao fazer login : " + task.getException() ,
-//                            Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -184,6 +188,37 @@ public class AutenticacaoActivity extends AppCompatActivity {
         return tipoUsuario.isChecked() ? "E" : "U";
     }
 
+    private void abrirTelaCadastro(String tipoUsuario){
+        if (tipoUsuario.equals("E")){//empresa
+            startActivity(new Intent(getApplicationContext(), ConfigEmpresaActivity.class));
+        }else{
+            startActivity(new Intent(getApplicationContext(), ConfigUsuarioActivity.class));
+        }
+    }
+
+    private void usuarioAutentico(String tipoUsuario){
+        DatabaseReference usuarioRef = firebaseRef.child("usuarios").child(idUsuario);
+
+        usuarioRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.getValue() !=null){
+                    Usuario usuario = dataSnapshot.getValue(Usuario.class);
+                    if (usuario.isAutenticado() == true){
+                        abrirTelaPrincipal(tipoUsuario);
+                    }else{
+                        abrirTelaCadastro(tipoUsuario);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
     private void abrirTelaPrincipal(String tipoUsuario){
 
         if (tipoUsuario.equals("E")){//empresa
@@ -197,7 +232,8 @@ public class AutenticacaoActivity extends AppCompatActivity {
         FirebaseUser usuarioAtual = autenticacao.getCurrentUser();
         if( usuarioAtual != null ){
             String tipoUsuario = usuarioAtual.getDisplayName();
-            abrirTelaPrincipal(tipoUsuario);
+            usuarioAutentico(tipoUsuario);
+
         }
     }
 
@@ -209,5 +245,8 @@ public class AutenticacaoActivity extends AppCompatActivity {
         autenticacao = ConfigFireBase.getFirebaseAutenticacao();
         tipoUsuario = findViewById(R.id.switchTipoUsuario);
         linearTipoUsuario = findViewById(R.id.linearTipoUsuario);
+
+        firebaseRef = ConfigFireBase.getFirebase();
+        idUsuario = UsuarioFireBase.getIdUsuario();
     }
 }

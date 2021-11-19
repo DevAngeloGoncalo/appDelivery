@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -123,10 +124,13 @@ public class ConfigUsuarioActivity extends AppCompatActivity {
                                             usuario.setLogradouro(logradouro);
                                             usuario.setNumeroEndereco(Integer.parseInt(numeroEndereco));
                                             usuario.setComplemento(complemento);
-
+                                            usuario.setAutenticado(true);
                                             usuario.salvar();
+
                                             exibirMensagem("Dados atualizado com sucesso!");
                                             finish();
+
+                                            abrirTelaPrincipal();
                                         }else{
                                             exibirMensagem("Digite seu Númere de Celular!");
                                         }
@@ -158,5 +162,9 @@ public class ConfigUsuarioActivity extends AppCompatActivity {
 
     private void exibirMensagem(String texto){
         Toast.makeText(this, texto, Toast.LENGTH_SHORT).show();
+    }
+
+    private void abrirTelaPrincipal(){
+        startActivity(new Intent(getApplicationContext(), PrincipalActivity.class));
     }
 }

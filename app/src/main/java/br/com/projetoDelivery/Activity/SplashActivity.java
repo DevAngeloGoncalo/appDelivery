@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 
+import br.com.projetoDelivery.Model.Usuario;
 import br.com.projetoDelivery.R;
 
 public class SplashActivity extends AppCompatActivity {
@@ -32,6 +33,5 @@ public class SplashActivity extends AppCompatActivity {
         //Intent i = new Intent(SplashActivity.this, PrincipalActivity.class);
         startActivity(i);
         finish();
-
     }
 }
