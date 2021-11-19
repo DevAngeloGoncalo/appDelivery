@@ -34,9 +34,19 @@ public class AdapterPedido extends RecyclerView.Adapter<AdapterPedido.MyViewHold
     public void onBindViewHolder(@NonNull MyViewHolder holder, int i) {
 
         Pedido pedido = pedidos.get(i);
-        holder.nome.setText( pedido.getNome() );
-        holder.endereco.setText( "Endereço: "+pedido.getEndereco() );
-        holder.observacao.setText( "Obs: "+ pedido.getObservacao() );
+        holder.nome.setText(pedido.getNome());
+        holder.cep.setText("CEP: " + pedido.getCEP());
+        holder.cidade.setText("Cidade: " + pedido.getCidade());
+        holder.bairro.setText("Bairro:" + pedido.getBairro());
+        holder.endereco.setText("Endereço: "+ pedido.getEndereco());
+        holder.numeroComplemento.setText("Endereço: "+ pedido.getNumeroEndereco() + " "+ pedido.getComplemento());
+        holder.numeroContato.setText("Endereço: "+ pedido.getNumeroContato());
+
+        if (pedido.getObservacao().isEmpty()){
+            holder.observacao.setText("Obs: Sem observações");
+        }else{
+            holder.observacao.setText("Obs: "+ pedido.getObservacao());
+        }
 
         List<ItemPedido> itens = new ArrayList<>();
         itens = pedido.getItens();
@@ -71,7 +81,12 @@ public class AdapterPedido extends RecyclerView.Adapter<AdapterPedido.MyViewHold
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView nome;
+        TextView cep;
+        TextView cidade;
+        TextView bairro;
         TextView endereco;
+        TextView numeroComplemento;
+        TextView numeroContato;
         TextView pgto;
         TextView observacao;
         TextView itens;
@@ -80,7 +95,12 @@ public class AdapterPedido extends RecyclerView.Adapter<AdapterPedido.MyViewHold
             super(itemView);
 
             nome        = itemView.findViewById(R.id.textPedidoNome);
+            cep        = itemView.findViewById(R.id.textCEP);
+            cidade    = itemView.findViewById(R.id.textPedidoEndereco);
+            bairro    = itemView.findViewById(R.id.textPedidoBairro);
             endereco    = itemView.findViewById(R.id.textPedidoEndereco);
+            numeroComplemento    = itemView.findViewById(R.id.textPedidoNumeroComplemento);
+            numeroContato    = itemView.findViewById(R.id.textPedidoNumeroContato);
             pgto        = itemView.findViewById(R.id.textPedidoPgto);
             observacao  = itemView.findViewById(R.id.textPedidoObs);
             itens       = itemView.findViewById(R.id.textPedidoItens);

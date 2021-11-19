@@ -15,10 +15,45 @@
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/textCEP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CEP: 54520000"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/textPedidoCidade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cidade: Recife"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/textPedidoBairro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bairro: Boa Viagem"
+        android:textSize="14sp" />
+
+    <TextView
         android:id="@+id/textPedidoEndereco"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Endereço: rua minguada, N 665"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/textPedidoNumeroComplemento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Apt: 246 C"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/textPedidoNumeroContato"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contato: (xx) 99999-9999"
         android:textSize="14sp" />
 
     <TextView
