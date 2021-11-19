@@ -38,6 +38,8 @@ public class ConfigUsuarioActivity extends AppCompatActivity {
 
         //Recuperar dados do usuário
         materializarDadosUsuario();
+
+
     }
 
     private void materializarDadosUsuario(){
@@ -60,6 +62,12 @@ public class ConfigUsuarioActivity extends AppCompatActivity {
                     editNumeroEndereco.setText(numeroEndereco);
                     editNumeroContato.setText(usuario.getNumeroContato());
                     editUsuarioComplemento.setText(usuario.getComplemento());
+
+                    Toolbar toolbar = findViewById(R.id.toolbar);
+                    toolbar.setTitle("Configurações");
+                    setSupportActionBar(toolbar);
+                    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
                 }
             }
 
@@ -75,7 +83,7 @@ public class ConfigUsuarioActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("Configurações");
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         editUsuarioNome = findViewById(R.id.editUsuarioNome);
         editCEP = findViewById(R.id.editCEP);
@@ -87,9 +95,15 @@ public class ConfigUsuarioActivity extends AppCompatActivity {
         editUsuarioComplemento = findViewById(R.id.editUsuarioComplemento);
         editNumeroContato = findViewById(R.id.editNumeroContato);
 
-
         firebaseRef = ConfigFireBase.getFirebase();
         idUsuario = UsuarioFireBase.getIdUsuario();
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
     public void validarDadosUsuario(View view){
         String nome = editUsuarioNome.getText().toString();

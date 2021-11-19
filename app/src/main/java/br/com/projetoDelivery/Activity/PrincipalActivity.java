@@ -166,7 +166,6 @@ public class PrincipalActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.menuSair : deslogarUsuario(); break;
             case R.id.menuConfig : abrirConfig(); break;
-//            case R.id.menuNovoProduto : abrirPesquisa(); break;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -176,9 +175,15 @@ public class PrincipalActivity extends AppCompatActivity {
             //Pedir Confirmacao AG20211115
             autenticacao.signOut();
             finish();
+
+            TelaInicial();
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    private void TelaInicial(){
+        startActivity(new Intent(PrincipalActivity.this, AutenticacaoActivity.class));
     }
 
     private void abrirConfig(){
