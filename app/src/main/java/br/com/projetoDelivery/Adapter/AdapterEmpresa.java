@@ -37,9 +37,9 @@ public class AdapterEmpresa extends RecyclerView.Adapter<AdapterEmpresa.MyViewHo
     public void onBindViewHolder(@NonNull MyViewHolder holder, int i) {
         Empresa empresa = empresas.get(i);
         holder.nomeEmpresa.setText(empresa.getNomeFantasia());
-        holder.categoria.setText(empresa.getEspecialidade() + " - ");
-        holder.telefone.setText(empresa.getTelefone() + " - ");
-        
+        holder.categoria.setText(empresa.getEspecialidade().toUpperCase() + " | ");
+        holder.telefone.setText(empresa.getTelefone());
+
         //Carregar imagem
         String urlImagem = empresa.getUrlImagem();
         Picasso.get().load( urlImagem ).into( holder.imagemEmpresa );
