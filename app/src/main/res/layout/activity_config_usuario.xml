@@ -159,6 +159,7 @@
             android:textColorHint="@color/azulClaro" />
 
         <Button
+            android:id="@+id/buttonSalvarUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="validarDadosUsuario"
