@@ -126,7 +126,7 @@ public class PrincipalActivity extends AppCompatActivity {
         DatabaseReference empresasRef = fireBaseRef.child("empresas");
 
         //estudar colocar um nome_filtro com tolower para pesquisar
-        Query query = empresasRef.orderByChild("nome").startAt(pesquisa).endAt(pesquisa + "\uf8ff");
+        Query query = empresasRef.orderByChild("nomeFantasia").startAt(pesquisa).endAt(pesquisa + "\uf8ff");
 
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
