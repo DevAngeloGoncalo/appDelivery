@@ -37,9 +37,9 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ConfigEmpresaActivity extends AppCompatActivity {
 
-        private EditText editRazaoSocial, editEmpresaNomeFantasia, editEmpresaCNPJ, editTelefone,
-                         editEmpresaCEP, editEmpresaEstado, editEmpresaCidade, editEmpresaBairro,
-                         editEmpresaLogradouro, editNumeroEndereco, editUsuarioComplemento, editEmpresaEspecialidade;
+    private EditText editRazaoSocial, editEmpresaNomeFantasia, editEmpresaCNPJ, editTelefone,
+                     editEmpresaCEP, editEmpresaEstado, editEmpresaCidade, editEmpresaBairro,
+                     editEmpresaLogradouro, editNumeroEndereco, editUsuarioComplemento, editEmpresaEspecialidade;
 
     private CircleImageView imagePerfilEmpresa;
     private static final int SELECIONAR_GALERIA = 200;
