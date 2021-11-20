@@ -39,7 +39,7 @@ public class ConfigEmpresaActivity extends AppCompatActivity {
 
         private EditText editRazaoSocial, editEmpresaNomeFantasia, editEmpresaCNPJ, editTelefone,
                          editEmpresaCEP, editEmpresaEstado, editEmpresaCidade, editEmpresaBairro,
-                         editEmpresaLogradouro, editNumeroEndereco, editUsuarioComplemento;
+                         editEmpresaLogradouro, editNumeroEndereco, editUsuarioComplemento, editEmpresaEspecialidade;
 
     private CircleImageView imagePerfilEmpresa;
     private static final int SELECIONAR_GALERIA = 200;
@@ -96,6 +96,7 @@ public class ConfigEmpresaActivity extends AppCompatActivity {
                     editEmpresaLogradouro.setText(empresa.getLogradouro());
                     editNumeroEndereco.setText(numeroEndereco);
                     editUsuarioComplemento.setText(empresa.getComplemento());
+                    editEmpresaEspecialidade.setText(empresa.getEspecialidade());
 
                     urlImagemEscolhida = empresa.getUrlImagem();
 
@@ -131,6 +132,7 @@ public class ConfigEmpresaActivity extends AppCompatActivity {
         String logradouro = editEmpresaLogradouro.getText().toString();
         String numeroEndereco = editNumeroEndereco.getText().toString();
         String complemento = editUsuarioComplemento.getText().toString();
+        String especialidade = editEmpresaEspecialidade.getText().toString();
 
 
         if(!razaoSocial.isEmpty()){
@@ -149,6 +151,7 @@ public class ConfigEmpresaActivity extends AppCompatActivity {
                         empresa.setBairro(bairro);
                         empresa.setLogradouro(logradouro);
                         empresa.setNumeroEndereco(Integer.parseInt(numeroEndereco));
+                        empresa.setEspecialidade(especialidade);
                         empresa.setComplemento(complemento);
                         empresa.setUrlImagem(urlImagemEscolhida);
 
@@ -241,6 +244,7 @@ public class ConfigEmpresaActivity extends AppCompatActivity {
         editEmpresaLogradouro = findViewById(R.id.editEmpresaLogradouro);
         editNumeroEndereco = findViewById(R.id.editNumeroEndereco);
         editUsuarioComplemento = findViewById(R.id.editUsuarioComplemento);
+        editEmpresaEspecialidade = findViewById(R.id.editEmpresaEspecialidade);
 
         imagePerfilEmpresa = findViewById(R.id.imagePerfilEmpresa);
 

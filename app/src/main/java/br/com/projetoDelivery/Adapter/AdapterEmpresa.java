@@ -36,7 +36,7 @@ public class AdapterEmpresa extends RecyclerView.Adapter<AdapterEmpresa.MyViewHo
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int i) {
         Empresa empresa = empresas.get(i);
-        holder.nomeEmpresa.setText(empresa.getRazaoSocial());
+        holder.nomeEmpresa.setText(empresa.getNomeFantasia());
         holder.categoria.setText(empresa.getRazaoSocial() + " - ");
         holder.tempo.setText(empresa.getRazaoSocial() + " Min");
         holder.entrega.setText("R$ " + empresa.getRazaoSocial().toString());

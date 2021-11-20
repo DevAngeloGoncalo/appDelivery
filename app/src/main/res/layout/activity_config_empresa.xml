@@ -207,6 +207,19 @@
 
     </LinearLayout>
 
+        <EditText
+            android:id="@+id/editEmpresaEspecialidade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="-2dp"
+            android:background="@drawable/bg_edit_text"
+            android:ems="10"
+            android:hint="Especialidade"
+            android:inputType="text"
+            android:padding="16dp"
+            android:textColor="@color/azulEscuro"
+            android:textColorHint="@color/azulClaro" />
+
         <Button
             android:id="@+id/buttonSalvarEmpresa"
             android:layout_width="match_parent"

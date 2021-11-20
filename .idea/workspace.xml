@@ -13,11 +13,9 @@
     <list default="true" id="3f7cd365-fc4f-41f5-8b62-37895226ec72" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/CatalogoActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/CatalogoActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/ConfigEmpresaActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/ConfigEmpresaActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Adapter/AdapterEmpresa.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Adapter/AdapterEmpresa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Model/Empresa.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Model/Empresa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_autenticacao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_autenticacao.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_config_empresa.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_config_empresa.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -248,10 +246,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="511" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1637206370454" />
-    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1637368002981">
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1637370971820">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1637368002981" />
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1637370971820" />
     <state x="590" y="336" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1637011402235">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -328,10 +326,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="404" y="27" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1637000781331" />
-    <state x="475" y="145" width="586" height="534" key="find.popup" timestamp="1637287101135">
+    <state x="475" y="145" width="586" height="534" key="find.popup" timestamp="1637370702111">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="475" y="145" width="586" height="534" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1637287101135" />
+    <state x="475" y="145" width="586" height="534" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1637370702111" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1637281537449">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -374,11 +372,6 @@
           <url>file://$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/AutenticacaoActivity.java</url>
           <line>74</line>
           <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/ConfigEmpresaActivity.java</url>
-          <line>86</line>
-          <option name="timeStamp" value="39" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

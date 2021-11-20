@@ -21,6 +21,7 @@ public class Empresa implements Serializable {
     private String logradouro;
     private int numeroEndereco;
     private String complemento;
+    private String especialidade;
 
     public Empresa() {
     }
@@ -133,5 +134,13 @@ public class Empresa implements Serializable {
 
     public void setComplemento(String complemento) {
         this.complemento = complemento;
+    }
+
+    public String getEspecialidade() {
+        return especialidade;
+    }
+
+    public void setEspecialidade(String especialidade) {
+        this.especialidade = especialidade;
     }
 }
