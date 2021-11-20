@@ -13,6 +13,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -31,7 +32,7 @@ import br.com.projetoDelivery.Listener.RecyclerItemClickListener;
 import br.com.projetoDelivery.Model.Produto;
 import br.com.projetoDelivery.R;
 
-public class EmpresaActivity extends AppCompatActivity {
+public class EmpresaActivity extends AppCompatActivity{
 
     private FirebaseAuth autenticacao;
     private RecyclerView recyclerProdutos;
@@ -40,6 +41,7 @@ public class EmpresaActivity extends AppCompatActivity {
     private DatabaseReference firebaseRef;
     private String idUsuarioLogado;
     private int backButtonCount = 0;
+    public static int Flag = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +61,8 @@ public class EmpresaActivity extends AppCompatActivity {
             @Override
             public void onItemClick(View view, int position)
             {
-
+                Flag = position;
+                startActivity(new Intent(EmpresaActivity.this, NovoProdutoEmpresaActivity.class));
             }
 
             @Override
@@ -108,6 +111,7 @@ public class EmpresaActivity extends AppCompatActivity {
                     produtos.add(dataSnapshot.getValue(Produto.class));
                 }
                 adapterProduto.notifyDataSetChanged();
+
             }
 
             @Override
