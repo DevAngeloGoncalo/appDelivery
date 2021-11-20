@@ -28,7 +28,7 @@
         android:inputType="textPersonName"
         android:padding="16dp"
         android:textColor="@color/azulEscuro"
-        android:textColorHint="@color/azulEscuro"/>
+        android:textColorHint="@color/azulClaro"/>
 
     <EditText
         android:id="@+id/editRegistroSenha"
@@ -41,7 +41,7 @@
         android:background="@drawable/bg_edit_text"
         android:padding="16dp"
         android:textColor="@color/azulEscuro"
-        android:textColorHint="@color/azulEscuro"/>
+        android:textColorHint="@color/azulClaro"/>
 
     <LinearLayout
         android:layout_width="match_parent"

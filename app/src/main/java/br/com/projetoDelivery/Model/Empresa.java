@@ -10,10 +10,17 @@ public class Empresa implements Serializable {
 
     private String idUsuario;
     private String urlImagem;
-    private String nome;
-    private String tempo;
-    private String categoria;
-    private Double precoEntrega;
+    private String razaoSocial;
+    private String nomeFantasia;
+    private String cnpj;
+    private String telefone;
+    private String cep;
+    private String estado;
+    private String cidade;
+    private String bairro;
+    private String logradouro;
+    private int numeroEndereco;
+    private String complemento;
 
     public Empresa() {
     }
@@ -40,35 +47,91 @@ public class Empresa implements Serializable {
         this.urlImagem = urlImagem;
     }
 
-    public String getNome() {
-        return nome;
+    public String getRazaoSocial() {
+        return razaoSocial;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setRazaoSocial(String razaoSocial) {
+        this.razaoSocial = razaoSocial;
     }
 
-    public String getTempo() {
-        return tempo;
+    public String getNomeFantasia() {
+        return nomeFantasia;
     }
 
-    public void setTempo(String tempo) {
-        this.tempo = tempo;
+    public void setNomeFantasia(String nomeFantasia) {
+        this.nomeFantasia = nomeFantasia;
     }
 
-    public String getCategoria() {
-        return categoria;
+    public String getCnpj() {
+        return cnpj;
     }
 
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
     }
 
-    public Double getPrecoEntrega() {
-        return precoEntrega;
+    public String getTelefone() {
+        return telefone;
     }
 
-    public void setPrecoEntrega(Double precoEntrega) {
-        this.precoEntrega = precoEntrega;
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getCep() {
+        return cep;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public String getLogradouro() {
+        return logradouro;
+    }
+
+    public void setLogradouro(String logradouro) {
+        this.logradouro = logradouro;
+    }
+
+    public int getNumeroEndereco() {
+        return numeroEndereco;
+    }
+
+    public void setNumeroEndereco(int numeroEndereco) {
+        this.numeroEndereco = numeroEndereco;
+    }
+
+    public String getComplemento() {
+        return complemento;
+    }
+
+    public void setComplemento(String complemento) {
+        this.complemento = complemento;
     }
 }

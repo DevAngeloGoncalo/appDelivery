@@ -249,7 +249,7 @@ public class CatalogoActivity extends AppCompatActivity {
 
             //idUsuario nesse caso é o id da empresa
             idEmpresa = empresaEscolhida.getIdUsuario();
-            textNomeEmpresaCatalogo.setText(empresaEscolhida.getNome());
+            textNomeEmpresaCatalogo.setText(empresaEscolhida.getNomeFantasia());
 
             String url = empresaEscolhida.getUrlImagem();
             Picasso.get().load(url).into(imageEmpresaCatalogo);

@@ -37,7 +37,9 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ConfigEmpresaActivity extends AppCompatActivity {
 
-    private EditText editEmpresaNome, editEmpresaCategoria, editEmpresaEntregaTempo, editEmpresaEntregaTaxa;
+        private EditText editRazaoSocial, editEmpresaNomeFantasia, editEmpresaCNPJ, editTelefone,
+                         editEmpresaCEP, editEmpresaEstado, editEmpresaCidade, editEmpresaBairro,
+                         editEmpresaLogradouro, editNumeroEndereco, editUsuarioComplemento;
 
     private CircleImageView imagePerfilEmpresa;
     private static final int SELECIONAR_GALERIA = 200;
@@ -79,10 +81,21 @@ public class ConfigEmpresaActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.getValue() != null){
                     Empresa empresa = snapshot.getValue(Empresa.class);
-                    editEmpresaNome.setText(empresa.getNome());
-                    editEmpresaCategoria.setText(empresa.getCategoria());
-                    editEmpresaEntregaTaxa.setText(empresa.getPrecoEntrega().toString());
-                    editEmpresaEntregaTempo.setText(empresa.getTempo());
+
+                    String numeroEndereco = String.valueOf(empresa.getNumeroEndereco());
+
+                    editRazaoSocial.setText(empresa.getRazaoSocial());
+                    editEmpresaNomeFantasia.setText(empresa.getNomeFantasia());
+                    editEmpresaCNPJ.setText(empresa.getCnpj());
+                    editTelefone.setText(empresa.getTelefone());
+                    editEmpresaCEP.setText(empresa.getCep());
+                    editEmpresaEstado.setText(empresa.getEstado());
+                    editTelefone.setText(empresa.getTelefone());
+                    editEmpresaCidade.setText(empresa.getCidade());
+                    editEmpresaBairro.setText(empresa.getBairro());
+                    editEmpresaLogradouro.setText(empresa.getLogradouro());
+                    editNumeroEndereco.setText(numeroEndereco);
+                    editUsuarioComplemento.setText(empresa.getComplemento());
 
                     urlImagemEscolhida = empresa.getUrlImagem();
 
@@ -107,21 +120,36 @@ public class ConfigEmpresaActivity extends AppCompatActivity {
 
     //public para ser acessado do botao
     public void validarDadosEmpresa(View view){
-        String nome = editEmpresaNome.getText().toString();
-        String taxa = editEmpresaEntregaTaxa.getText().toString();
-        String categoria = editEmpresaCategoria.getText().toString();
-        String tempo = editEmpresaEntregaTempo.getText().toString();
+        String razaoSocial = editRazaoSocial.getText().toString();
+        String nomeFantasia = editEmpresaNomeFantasia.getText().toString();
+        String cnpj = editEmpresaCNPJ.getText().toString();
+        String telefone = editTelefone.getText().toString();
+        String cep = editEmpresaCEP.getText().toString();
+        String estado = editEmpresaEstado.getText().toString();
+        String cidade = editEmpresaCidade.getText().toString();
+        String bairro = editEmpresaBairro.getText().toString();
+        String logradouro = editEmpresaLogradouro.getText().toString();
+        String numeroEndereco = editNumeroEndereco.getText().toString();
+        String complemento = editUsuarioComplemento.getText().toString();
 
-        if(!nome.isEmpty()){
-            if(!taxa.isEmpty()){
-                if(!categoria.isEmpty()){
-                    if(!tempo.isEmpty()){
+
+        if(!razaoSocial.isEmpty()){
+            if(!nomeFantasia.isEmpty()){
+                if(!cnpj.isEmpty()){
+                    if(!telefone.isEmpty()){
                         Empresa empresa = new Empresa();
                         empresa.setIdUsuario(idUsuarioLogado);
-                        empresa.setNome(nome);
-                        empresa.setPrecoEntrega(Double.parseDouble(taxa));
-                        empresa.setCategoria(categoria);
-                        empresa.setTempo(tempo);
+                        empresa.setRazaoSocial(razaoSocial);
+                        empresa.setNomeFantasia(nomeFantasia);
+                        empresa.setCnpj(cnpj);
+                        empresa.setTelefone(telefone);
+                        empresa.setCep(cep);
+                        empresa.setEstado(estado);
+                        empresa.setCidade(cidade);
+                        empresa.setBairro(bairro);
+                        empresa.setLogradouro(logradouro);
+                        empresa.setNumeroEndereco(Integer.parseInt(numeroEndereco));
+                        empresa.setComplemento(complemento);
                         empresa.setUrlImagem(urlImagemEscolhida);
 
                         empresa.salvar();
@@ -202,10 +230,18 @@ public class ConfigEmpresaActivity extends AppCompatActivity {
 
     private void inicializarComponentes() {
 
-        editEmpresaNome = findViewById(R.id.editEmpresaNome);
-        editEmpresaCategoria = findViewById(R.id.editEmpresaCategoria);
-        editEmpresaEntregaTempo = findViewById(R.id.editEmpresaEntregaTempo);
-        editEmpresaEntregaTaxa = findViewById(R.id.editEmpresaEntregaTaxa);
+        editRazaoSocial = findViewById(R.id.editRazaoSocial);
+        editEmpresaNomeFantasia = findViewById(R.id.editEmpresaNomeFantasia);
+        editEmpresaCNPJ = findViewById(R.id.editEmpresaCNPJ);
+        editTelefone = findViewById(R.id.editTelefone);
+        editEmpresaCEP = findViewById(R.id.editEmpresaCEP);
+        editEmpresaEstado = findViewById(R.id.editEmpresaEstado);
+        editEmpresaCidade = findViewById(R.id.editEmpresaCidade);
+        editEmpresaBairro = findViewById(R.id.editEmpresaBairro);
+        editEmpresaLogradouro = findViewById(R.id.editEmpresaLogradouro);
+        editNumeroEndereco = findViewById(R.id.editNumeroEndereco);
+        editUsuarioComplemento = findViewById(R.id.editUsuarioComplemento);
+
         imagePerfilEmpresa = findViewById(R.id.imagePerfilEmpresa);
 
         storageReference = ConfigFireBase.getFirebaseStorage();
