@@ -18,15 +18,25 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 import java.io.ByteArrayOutputStream;
+import java.util.ArrayList;
+import java.util.List;
 
+import br.com.projetoDelivery.Adapter.AdapterEmpresa;
+import br.com.projetoDelivery.Adapter.AdapterProduto;
 import br.com.projetoDelivery.Helper.ConfigFireBase;
 import br.com.projetoDelivery.Helper.UsuarioFireBase;
+import br.com.projetoDelivery.Model.Empresa;
 import br.com.projetoDelivery.Model.Produto;
+import br.com.projetoDelivery.Model.Usuario;
 import br.com.projetoDelivery.R;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -35,7 +45,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class NovoProdutoEmpresaActivity extends AppCompatActivity {
     private EditText editProdutoNome, editProdutoDescricao, editProdutoPreco;
     private CircleImageView imageProdutoCatalogo;
-    private String idUsuarioLogado;
+    private String idUsuarioLogado, idProduto;
+    private List<Produto> produtos = new ArrayList<>();
     private Produto produto;
     private String urlImagemEscolhida = "";
 
@@ -43,6 +54,8 @@ public class NovoProdutoEmpresaActivity extends AppCompatActivity {
 
     private StorageReference storageReference;
     private DatabaseReference firebaseRef;
+
+    private int count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +76,75 @@ public class NovoProdutoEmpresaActivity extends AppCompatActivity {
                 }
             }
         });
+
+        if (EmpresaActivity.Flag != -1)
+        {
+            quantidadeProdutos();
+        }
+
+
+    }
+    private void quantidadeProdutos(){
+        DatabaseReference produtosRef = firebaseRef.child("produtos").child(idUsuarioLogado);
+        produtosRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                produtos.clear();
+
+                for(DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    produtos.add(dataSnapshot.getValue(Produto.class));
+                }
+                materializarDadosProduto();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+
+
+
+        });
+    }
+    public void materializarDadosProduto(){
+
+
+        int position = EmpresaActivity.Flag;
+        Produto produtoSelecionado = produtos.get(position);
+        idProduto = produtoSelecionado.getIdProduto();
+        //DatabaseReference produtosRef = firebaseRef.child("produtos").child(idUsuarioLogado).child(idProduto);
+        DatabaseReference produtosRef = firebaseRef.child("produtos").child(idUsuarioLogado).child(idProduto);
+        produtosRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.getValue() != null){
+                    produto = snapshot.getValue(Produto.class);
+
+                    editProdutoNome.setText(produto.getNome());
+                    editProdutoDescricao.setText(produto.getDescricao());
+
+                    String preco = String.valueOf(produto.getPreco());
+                    editProdutoPreco.setText(preco);
+
+                    urlImagemEscolhida = produto.getUrlImagem();
+
+                    if(urlImagemEscolhida != ""){
+
+                        Picasso.get().load(urlImagemEscolhida).into(imageProdutoCatalogo);
+                    }
+
+                }
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
     }
 
     public void validarDadosProduto(View view) {
