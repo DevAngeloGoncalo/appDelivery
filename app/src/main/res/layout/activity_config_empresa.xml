@@ -14,22 +14,48 @@
 
     //LinearLayout criado para facilitar no espaçamento.
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarThumbVertical="@color/azulEscuro">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="16dp">
 
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imagePerfilEmpresa"
             android:layout_width="match_parent"
             android:layout_height="120dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="0dp"
             android:layout_marginBottom="8dp"
             android:src="@drawable/perfil" />
 
         <EditText
-            android:id="@+id/editEmpresaNome"
+            android:id="@+id/editRazaoSocial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="-2dp"
+            android:background="@drawable/bg_edit_text"
+            android:ems="10"
+            android:hint="Razão Social"
+            android:inputType="text"
+            android:padding="16dp"
+            android:textColor="@color/azulEscuro"
+            android:textColorHint="@color/azulClaro"/>
+
+        <EditText
+            android:id="@+id/editEmpresaNomeFantasia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="-2dp"
@@ -39,49 +65,150 @@
             android:inputType="text"
             android:padding="16dp"
             android:textColor="@color/azulEscuro"
-            android:textColorHint="@color/azulEscuro"/>
+            android:textColorHint="@color/azulClaro" />
 
         <EditText
-            android:id="@+id/editEmpresaCategoria"
+            android:id="@+id/editEmpresaCNPJ"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="-2dp"
             android:background="@drawable/bg_edit_text"
             android:ems="10"
-            android:hint="Categoria"
+            android:hint="CNPJ"
             android:inputType="text"
             android:padding="16dp"
             android:textColor="@color/azulEscuro"
-            android:textColorHint="@color/azulEscuro"/>
+            android:textColorHint="@color/azulClaro" />
 
         <EditText
-            android:id="@+id/editEmpresaEntregaTempo"
+            android:id="@+id/editTelefone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="-2dp"
             android:background="@drawable/bg_edit_text"
             android:ems="10"
-            android:hint="Tempo de Entrega"
+            android:hint="(XX) 99999-1212"
             android:inputType="text"
             android:padding="16dp"
             android:textColor="@color/azulEscuro"
-            android:textColorHint="@color/azulEscuro"/>
+            android:textColorHint="@color/azulClaro"/>
 
         <EditText
-            android:id="@+id/editEmpresaEntregaTaxa"
+            android:id="@+id/editEmpresaCEP"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="-2dp"
             android:background="@drawable/bg_edit_text"
             android:ems="10"
-            android:hint="Taxa Entrega"
-            android:inputType="numberDecimal"
+            android:hint="CEP"
+            android:inputType="text"
             android:padding="16dp"
             android:textColor="@color/azulEscuro"
-            android:textColorHint="@color/azulEscuro"/>
+            android:textColorHint="@color/azulClaro"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <EditText
+                android:id="@+id/editEmpresaEstado"
+                android:layout_width="78dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-2dp"
+                android:background="@drawable/bg_edit_text"
+                android:ems="10"
+                android:hint="UF"
+                android:inputType="text"
+                android:padding="16dp"
+                android:paddingLeft="8dp"
+                android:paddingTop="8dp"
+                android:paddingRight="8dp"
+                android:paddingBottom="8dp"
+                android:textColor="@color/azulEscuro"
+                android:textColorHint="@color/azulClaro" />
+
+            <EditText
+                android:id="@+id/editEmpresaCidade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-2dp"
+                android:background="@drawable/bg_edit_text"
+                android:ems="10"
+                android:hint="Cidade"
+                android:inputType="text"
+                android:padding="16dp"
+                android:paddingLeft="8dp"
+                android:paddingTop="8dp"
+                android:paddingRight="8dp"
+                android:paddingBottom="8dp"
+                android:textColor="@color/azulEscuro"
+                android:textColorHint="@color/azulClaro" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/editEmpresaBairro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="-2dp"
+            android:background="@drawable/bg_edit_text"
+            android:ems="10"
+            android:hint="Bairro"
+            android:inputType="text"
+            android:padding="16dp"
+            android:textColor="@color/azulEscuro"
+            android:textColorHint="@color/azulClaro" />
+
+        <EditText
+            android:id="@+id/editEmpresaLogradouro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="-2dp"
+            android:background="@drawable/bg_edit_text"
+            android:ems="10"
+            android:hint="Logradouro"
+            android:inputType="text"
+            android:padding="16dp"
+            android:textColor="@color/azulEscuro"
+            android:textColorHint="@color/azulClaro" />
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <EditText
+            android:id="@+id/editNumeroEndereco"
+            android:layout_width="78dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-2dp"
+            android:background="@drawable/bg_edit_text"
+            android:ems="10"
+            android:hint="N°"
+            android:inputType="text"
+            android:padding="16dp"
+            android:textColor="@color/azulEscuro"
+            android:textColorHint="@color/azulClaro" />
+
+        <EditText
+            android:id="@+id/editUsuarioComplemento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-2dp"
+            android:background="@drawable/bg_edit_text"
+            android:ems="10"
+            android:hint="Complemento"
+            android:inputType="text"
+            android:padding="16dp"
+            android:textColor="@color/azulEscuro"
+            android:textColorHint="@color/azulClaro" />
+
+    </LinearLayout>
 
         <Button
-            android:id="@+id/buttonAcesso2"
+            android:id="@+id/buttonSalvarEmpresa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="validarDadosEmpresa"
@@ -90,4 +217,6 @@
             android:theme="@style/botaoPadrao" />
 
     </LinearLayout>
+
+    </ScrollView>
 </LinearLayout>

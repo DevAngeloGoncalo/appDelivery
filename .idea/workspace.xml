@@ -13,10 +13,12 @@
     <list default="true" id="3f7cd365-fc4f-41f5-8b62-37895226ec72" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/AutenticacaoActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/AutenticacaoActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/CatalogoActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/CatalogoActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/ConfigEmpresaActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/ConfigEmpresaActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/EmpresaActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/EmpresaActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/PrincipalActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/PrincipalActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Adapter/AdapterEmpresa.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Adapter/AdapterEmpresa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Model/Empresa.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Model/Empresa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_autenticacao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_autenticacao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_config_empresa.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_config_empresa.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,10 +248,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="511" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1637206370454" />
-    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1637280364955">
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1637368002981">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1637280364955" />
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1637368002981" />
     <state x="590" y="336" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1637011402235">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -262,10 +264,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1636943747477" />
-    <state x="100" y="100" width="1336" height="624" key="AVDManager" timestamp="1637281677336">
+    <state x="100" y="100" width="1336" height="624" key="AVDManager" timestamp="1637369750997">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="100" y="100" width="1336" height="624" key="AVDManager/0.0.1536.824@0.0.1536.824" timestamp="1637281677336" />
+    <state x="100" y="100" width="1336" height="624" key="AVDManager/0.0.1536.824@0.0.1536.824" timestamp="1637369750997" />
     <state x="349" y="167" key="AndroidCreateResourceFileDialog" timestamp="1637027393805">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -278,38 +280,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1637199297647" />
-    <state width="1491" height="211" key="GridCell.Tab.0.bottom" timestamp="1637297068711">
+    <state width="1491" height="211" key="GridCell.Tab.0.bottom" timestamp="1637299010570">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="211" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1637297068711" />
-    <state width="1491" height="211" key="GridCell.Tab.0.center" timestamp="1637297068710">
+    <state width="1491" height="211" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1637299010570" />
+    <state width="1491" height="211" key="GridCell.Tab.0.center" timestamp="1637299010570">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="211" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1637297068710" />
-    <state width="1491" height="211" key="GridCell.Tab.0.left" timestamp="1637297068710">
+    <state width="1491" height="211" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1637299010570" />
+    <state width="1491" height="211" key="GridCell.Tab.0.left" timestamp="1637299010569">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="211" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1637297068710" />
-    <state width="1491" height="211" key="GridCell.Tab.0.right" timestamp="1637297068711">
+    <state width="1491" height="211" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1637299010569" />
+    <state width="1491" height="211" key="GridCell.Tab.0.right" timestamp="1637299010570">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="211" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1637297068711" />
-    <state width="1491" height="211" key="GridCell.Tab.1.bottom" timestamp="1637297068712">
+    <state width="1491" height="211" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1637299010570" />
+    <state width="1491" height="211" key="GridCell.Tab.1.bottom" timestamp="1637299010571">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="211" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1637297068712" />
-    <state width="1491" height="211" key="GridCell.Tab.1.center" timestamp="1637297068711">
+    <state width="1491" height="211" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1637299010571" />
+    <state width="1491" height="211" key="GridCell.Tab.1.center" timestamp="1637299010571">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="211" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1637297068711" />
-    <state width="1491" height="211" key="GridCell.Tab.1.left" timestamp="1637297068711">
+    <state width="1491" height="211" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1637299010571" />
+    <state width="1491" height="211" key="GridCell.Tab.1.left" timestamp="1637299010570">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="211" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1637297068711" />
-    <state width="1491" height="211" key="GridCell.Tab.1.right" timestamp="1637297068711">
+    <state width="1491" height="211" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1637299010570" />
+    <state width="1491" height="211" key="GridCell.Tab.1.right" timestamp="1637299010571">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="211" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1637297068711" />
+    <state width="1491" height="211" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1637299010571" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1636857188761">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -354,11 +356,6 @@
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/AutenticacaoActivity.java</url>
-          <line>234</line>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/ConfigUsuarioActivity.java</url>
           <line>33</line>
           <option name="timeStamp" value="34" />
@@ -377,6 +374,11 @@
           <url>file://$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/AutenticacaoActivity.java</url>
           <line>74</line>
           <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/ConfigEmpresaActivity.java</url>
+          <line>86</line>
+          <option name="timeStamp" value="39" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
