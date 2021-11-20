@@ -112,7 +112,6 @@ public class NovoProdutoEmpresaActivity extends AppCompatActivity {
         int position = EmpresaActivity.Flag;
         Produto produtoSelecionado = produtos.get(position);
         idProduto = produtoSelecionado.getIdProduto();
-        //DatabaseReference produtosRef = firebaseRef.child("produtos").child(idUsuarioLogado).child(idProduto);
         DatabaseReference produtosRef = firebaseRef.child("produtos").child(idUsuarioLogado).child(idProduto);
         produtosRef.addValueEventListener(new ValueEventListener() {
             @Override
