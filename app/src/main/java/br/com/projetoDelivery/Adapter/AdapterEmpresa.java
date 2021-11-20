@@ -37,10 +37,9 @@ public class AdapterEmpresa extends RecyclerView.Adapter<AdapterEmpresa.MyViewHo
     public void onBindViewHolder(@NonNull MyViewHolder holder, int i) {
         Empresa empresa = empresas.get(i);
         holder.nomeEmpresa.setText(empresa.getNomeFantasia());
-        holder.categoria.setText(empresa.getRazaoSocial() + " - ");
-        holder.tempo.setText(empresa.getRazaoSocial() + " Min");
-        holder.entrega.setText("R$ " + empresa.getRazaoSocial().toString());
-
+        holder.categoria.setText(empresa.getEspecialidade() + " - ");
+        holder.telefone.setText(empresa.getTelefone() + " - ");
+        
         //Carregar imagem
         String urlImagem = empresa.getUrlImagem();
         Picasso.get().load( urlImagem ).into( holder.imagemEmpresa );
@@ -57,16 +56,15 @@ public class AdapterEmpresa extends RecyclerView.Adapter<AdapterEmpresa.MyViewHo
         ImageView imagemEmpresa;
         TextView nomeEmpresa;
         TextView categoria;
-        TextView tempo;
-        TextView entrega;
+        TextView telefone;
+
 
         public MyViewHolder(View itemView) {
             super(itemView);
 
             nomeEmpresa = itemView.findViewById(R.id.textNomeEmpresa);
             categoria = itemView.findViewById(R.id.textCategoriaEmpresa);
-            tempo = itemView.findViewById(R.id.textTempoEmpresa);
-            entrega = itemView.findViewById(R.id.textEntregaEmpresa);
+            telefone = itemView.findViewById(R.id.textTelefone);
             imagemEmpresa = itemView.findViewById(R.id.imageEmpresa);
         }
     }

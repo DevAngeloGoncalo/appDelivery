@@ -46,20 +46,11 @@
                     android:text="Supermercado" />
 
                 <TextView
-                    android:id="@+id/textTempoEmpresa"
+                    android:id="@+id/textTelefone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
-                    android:text="- 25-30 min" />
-
-                <TextView
-                    android:id="@+id/textEntregaEmpresa"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="4dp"
-                    android:layout_weight="1"
-                    android:text="- R$ 10" />
-
+                    android:text="(xx) 99999-9999" />
             </LinearLayout>
 
         </LinearLayout>
