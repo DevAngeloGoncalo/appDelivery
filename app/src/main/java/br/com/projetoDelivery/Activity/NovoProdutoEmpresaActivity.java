@@ -108,7 +108,6 @@ public class NovoProdutoEmpresaActivity extends AppCompatActivity {
     }
     public void materializarDadosProduto(){
 
-
         int position = EmpresaActivity.Flag;
         Produto produtoSelecionado = produtos.get(position);
         idProduto = produtoSelecionado.getIdProduto();
