@@ -11,7 +11,6 @@ public class ConfigFireBase {
     private static FirebaseAuth referenciaAutenticacao;
     private static StorageReference referenciaStorage;
 
-
     //Retorna a referencia do database
     public static DatabaseReference getFirebase(){
         if(referenciaFirebase ==null){
@@ -27,7 +26,6 @@ public class ConfigFireBase {
         }
         return referenciaAutenticacao;
     }
-
 
     //Retorna a Instancia do FirebaseStorage
     public static StorageReference getFirebaseStorage(){
