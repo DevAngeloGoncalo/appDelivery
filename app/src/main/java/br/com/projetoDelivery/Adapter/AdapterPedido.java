@@ -39,8 +39,8 @@ public class AdapterPedido extends RecyclerView.Adapter<AdapterPedido.MyViewHold
         holder.cidade.setText("Cidade: " + pedido.getCidade());
         holder.bairro.setText("Bairro:" + pedido.getBairro());
         holder.endereco.setText("Endereço: "+ pedido.getEndereco());
-        holder.numeroComplemento.setText("Endereço: "+ pedido.getNumeroEndereco() + " "+ pedido.getComplemento());
-        holder.numeroContato.setText("Endereço: "+ pedido.getNumeroContato());
+        holder.numeroComplemento.setText("Complemento: "+ pedido.getNumeroEndereco() + " "+ pedido.getComplemento());
+        holder.numeroContato.setText("Contato: "+ pedido.getNumeroContato());
 
         if (pedido.getObservacao().isEmpty()){
             holder.observacao.setText("Obs: Sem observações");
