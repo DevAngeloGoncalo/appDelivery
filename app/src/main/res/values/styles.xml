@@ -26,6 +26,4 @@
         <item name="android:colorBackground">@color/azulEscuro</item>
         <item name="android:textColor">@color/branco</item>
     </style>
-
-
 </resources>
