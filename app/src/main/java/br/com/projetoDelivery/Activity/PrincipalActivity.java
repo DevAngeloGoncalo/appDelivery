@@ -164,7 +164,6 @@ public class PrincipalActivity extends AppCompatActivity {
 
             }
         });
-
     }
 
     //Criar menus na tela
@@ -184,7 +183,6 @@ public class PrincipalActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
         switch (item.getItemId()){
             case R.id.menuSair : deslogarUsuario(); break;
             case R.id.menuConfig : abrirConfig(); break;

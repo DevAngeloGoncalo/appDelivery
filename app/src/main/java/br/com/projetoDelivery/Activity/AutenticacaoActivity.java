@@ -179,7 +179,6 @@ public class AutenticacaoActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
 
     private String getTipoUsuario(){
