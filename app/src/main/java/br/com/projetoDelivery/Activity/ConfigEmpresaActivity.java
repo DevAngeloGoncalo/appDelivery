@@ -139,37 +139,73 @@ public class ConfigEmpresaActivity extends AppCompatActivity {
             if(!nomeFantasia.isEmpty()){
                 if(!cnpj.isEmpty()){
                     if(!telefone.isEmpty()){
-                        Empresa empresa = new Empresa();
-                        empresa.setIdUsuario(idUsuarioLogado);
-                        empresa.setRazaoSocial(razaoSocial);
-                        empresa.setNomeFantasia(nomeFantasia);
-                        empresa.setCnpj(cnpj);
-                        empresa.setTelefone(telefone);
-                        empresa.setCep(cep);
-                        empresa.setEstado(estado);
-                        empresa.setCidade(cidade);
-                        empresa.setBairro(bairro);
-                        empresa.setLogradouro(logradouro);
-                        empresa.setNumeroEndereco(Integer.parseInt(numeroEndereco));
-                        empresa.setEspecialidade(especialidade);
-                        empresa.setComplemento(complemento);
-                        empresa.setUrlImagem(urlImagemEscolhida);
+                        if(!cep.isEmpty()){
+                            if(!estado.isEmpty()){
+                                if(!cidade.isEmpty()){
+                                    if(!bairro.isEmpty()){
+                                        if(!logradouro.isEmpty()){
+                                            if(!numeroEndereco.isEmpty()){
+                                                if(!especialidade.isEmpty()){
+                                                    if(!complemento.isEmpty()){
+                                                        if(!urlImagemEscolhida.isEmpty()){
+                                                            Empresa empresa = new Empresa();
+                                                            empresa.setIdUsuario(idUsuarioLogado);
+                                                            empresa.setRazaoSocial(razaoSocial);
+                                                            empresa.setNomeFantasia(nomeFantasia);
+                                                            empresa.setCnpj(cnpj);
+                                                            empresa.setTelefone(telefone);
+                                                            empresa.setCep(cep);
+                                                            empresa.setEstado(estado);
+                                                            empresa.setCidade(cidade);
+                                                            empresa.setBairro(bairro);
+                                                            empresa.setLogradouro(logradouro);
+                                                            empresa.setNumeroEndereco(Integer.parseInt(numeroEndereco));
+                                                            empresa.setEspecialidade(especialidade);
+                                                            empresa.setComplemento(complemento);
+                                                            empresa.setUrlImagem(urlImagemEscolhida);
 
-                        empresa.salvar();
-                        finish();
+                                                            empresa.salvar();
+                                                            finish();
 
-                        abrirTelaPrincipalEmpresa();
+                                                            abrirTelaPrincipalEmpresa();
+                                                        }else{
+                                                            exibirMensagem("Escolha uma imagem");
+                                                        }
+                                                    }else{
+                                                        exibirMensagem("Digite o complemento");
+                                                    }
+                                                }else{
+                                                    exibirMensagem("Digite a especialidade");
+                                                }
+                                            }else{
+                                                exibirMensagem("Digite o numero do endereço");
+                                            }
+                                        }else{
+                                            exibirMensagem("Digite o logradouro");
+                                        }
+                                    }else{
+                                        exibirMensagem("Digite o bairro");
+                                    }
+                                }else{
+                                    exibirMensagem("Digite a Cidade");
+                                }
+                            }else{
+                                exibirMensagem("Digite o Estado");
+                            }
+                        }else{
+                            exibirMensagem("Digite o CEP");
+                        }
                     }else{
-                        exibirMensagem("Digite um tempo de entrega");
+                        exibirMensagem("Digite O Telefone");
                     }
                 }else{
-                    exibirMensagem("Digite uma categoria para a empresa");
+                    exibirMensagem("Digite o CNPJ");
                 }
             }else{
-                exibirMensagem("Digite uma taxa de entrega");
+                exibirMensagem("Digite o nome fantasia");
             }
         }else{
-            exibirMensagem("Digite um nome para a empresa");
+            exibirMensagem("Digite a razão social");
         }
     }
 
