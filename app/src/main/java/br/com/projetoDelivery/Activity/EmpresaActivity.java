@@ -29,6 +29,7 @@ import br.com.projetoDelivery.Adapter.AdapterProduto;
 import br.com.projetoDelivery.Helper.ConfigFireBase;
 import br.com.projetoDelivery.Helper.UsuarioFireBase;
 import br.com.projetoDelivery.Listener.RecyclerItemClickListener;
+import br.com.projetoDelivery.Model.Empresa;
 import br.com.projetoDelivery.Model.Produto;
 import br.com.projetoDelivery.R;
 
@@ -161,10 +162,6 @@ public class EmpresaActivity extends AppCompatActivity{
     }
 
     private void inicializarComponentes(){
-        //Configurações Toolbar
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle("Empresa");
-        setSupportActionBar(toolbar);
         autenticacao = ConfigFireBase.getFirebaseAutenticacao();
         firebaseRef = ConfigFireBase.getFirebase();
         idUsuarioLogado = UsuarioFireBase.getIdUsuario();
@@ -175,6 +172,24 @@ public class EmpresaActivity extends AppCompatActivity{
         recyclerProdutos.setHasFixedSize(true);
         adapterProduto = new AdapterProduto(produtos, this);
         recyclerProdutos.setAdapter(adapterProduto);
+
+        DatabaseReference empresaRef = firebaseRef.child("empresas").child(idUsuarioLogado);
+        empresaRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.getValue() != null) {
+                    //Configurações Toolbar
+                    Empresa empresa = snapshot.getValue(Empresa.class);
+                    Toolbar toolbar = findViewById(R.id.toolbar);
+                    toolbar.setTitle(empresa.getNomeFantasia());
+                    setSupportActionBar(toolbar);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     private  void abrirConfig(){
