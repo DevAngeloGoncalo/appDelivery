@@ -55,8 +55,6 @@ public class NovoProdutoEmpresaActivity extends AppCompatActivity {
     private StorageReference storageReference;
     private DatabaseReference firebaseRef;
 
-    private int count = 0;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,12 +77,10 @@ public class NovoProdutoEmpresaActivity extends AppCompatActivity {
 
         if (EmpresaActivity.Flag != -1)
         {
-            quantidadeProdutos();
+            editarProduto();
         }
-
-
     }
-    private void quantidadeProdutos(){
+    private void editarProduto(){
         DatabaseReference produtosRef = firebaseRef.child("produtos").child(idUsuarioLogado);
         produtosRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -101,9 +97,6 @@ public class NovoProdutoEmpresaActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
-
-
-
         });
     }
     public void materializarDadosProduto(){
@@ -142,10 +135,14 @@ public class NovoProdutoEmpresaActivity extends AppCompatActivity {
             }
         });
 
-
+        EmpresaActivity.Flag = -1;
     }
 
     public void validarDadosProduto(View view) {
+        if (EmpresaActivity.Flag == -1) {
+            produto = new Produto(idUsuarioLogado);
+        }
+
         String nome = editProdutoNome.getText().toString();
         String preco = editProdutoPreco.getText().toString();
         String descricao = editProdutoDescricao.getText().toString();
