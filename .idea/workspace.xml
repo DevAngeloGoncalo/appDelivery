@@ -6,14 +6,13 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f7cd365-fc4f-41f5-8b62-37895226ec72" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/EmpresaActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/EmpresaActivity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -278,38 +277,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1638336310197" />
-    <state width="1491" height="211" key="GridCell.Tab.0.bottom" timestamp="1637428140377">
+    <state width="1491" height="211" key="GridCell.Tab.0.bottom" timestamp="1638414629532">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="211" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1637428140377" />
-    <state width="1491" height="211" key="GridCell.Tab.0.center" timestamp="1637428140377">
+    <state width="1491" height="211" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1638414629532" />
+    <state width="1491" height="211" key="GridCell.Tab.0.center" timestamp="1638414629531">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="211" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1637428140377" />
-    <state width="1491" height="211" key="GridCell.Tab.0.left" timestamp="1637428140377">
+    <state width="1491" height="211" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1638414629531" />
+    <state width="1491" height="211" key="GridCell.Tab.0.left" timestamp="1638414629531">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="211" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1637428140377" />
-    <state width="1491" height="211" key="GridCell.Tab.0.right" timestamp="1637428140377">
+    <state width="1491" height="211" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1638414629531" />
+    <state width="1491" height="211" key="GridCell.Tab.0.right" timestamp="1638414629532">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="211" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1637428140377" />
-    <state width="1491" height="211" key="GridCell.Tab.1.bottom" timestamp="1637428140377">
+    <state width="1491" height="211" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1638414629532" />
+    <state width="1491" height="211" key="GridCell.Tab.1.bottom" timestamp="1638414629532">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="211" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1637428140377" />
-    <state width="1491" height="211" key="GridCell.Tab.1.center" timestamp="1637428140377">
+    <state width="1491" height="211" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1638414629532" />
+    <state width="1491" height="211" key="GridCell.Tab.1.center" timestamp="1638414629532">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="211" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1637428140377" />
-    <state width="1491" height="211" key="GridCell.Tab.1.left" timestamp="1637428140377">
+    <state width="1491" height="211" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1638414629532" />
+    <state width="1491" height="211" key="GridCell.Tab.1.left" timestamp="1638414629532">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="211" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1637428140377" />
-    <state width="1491" height="211" key="GridCell.Tab.1.right" timestamp="1637428140377">
+    <state width="1491" height="211" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1638414629532" />
+    <state width="1491" height="211" key="GridCell.Tab.1.right" timestamp="1638414629532">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="211" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1637428140377" />
+    <state width="1491" height="211" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1638414629532" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1638328751869">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -359,24 +358,29 @@
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/AutenticacaoActivity.java</url>
-          <line>104</line>
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/AutenticacaoActivity.java</url>
-          <line>107</line>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/EmpresaActivity.java</url>
           <line>70</line>
           <option name="timeStamp" value="69" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/NovoProdutoEmpresaActivity.java</url>
-          <line>130</line>
-          <option name="timeStamp" value="81" />
+          <line>79</line>
+          <option name="timeStamp" value="83" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/NovoProdutoEmpresaActivity.java</url>
+          <line>83</line>
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/NovoProdutoEmpresaActivity.java</url>
+          <line>103</line>
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/br/com/projetoDelivery/Activity/NovoProdutoEmpresaActivity.java</url>
+          <line>145</line>
+          <option name="timeStamp" value="86" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
